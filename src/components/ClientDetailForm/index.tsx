@@ -86,9 +86,12 @@ const ClientDetailForm = () => {
                     onChange={handleClick}
                     label="Select number"
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem value={10}>1</MenuItem>
+                    <MenuItem value={20}>2-3</MenuItem>
+                    <MenuItem value={30}>3-5</MenuItem>
+                    <MenuItem value={50}>6-10</MenuItem>
+                    <MenuItem value={60}>10-15</MenuItem>
+                    <MenuItem value={70}>15+</MenuItem>
                   </Select>
                 </FormControl>
               </div>
@@ -109,9 +112,14 @@ const ClientDetailForm = () => {
                     onChange={handleChange}
                     label="Select Turnover"
                   >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
+                    <MenuItem>$100,000</MenuItem>
+                    <MenuItem>$200,000</MenuItem>
+                    <MenuItem>$300,000</MenuItem>
+                    <MenuItem>$400,000</MenuItem>
+                    <MenuItem>$500,000</MenuItem>
+                    <MenuItem>$1,000,000</MenuItem>
+                    <MenuItem>$1,500,000</MenuItem>
+             
                   </Select>
                 </FormControl>
               </div>
