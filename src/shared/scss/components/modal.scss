@@ -1,0 +1,89 @@
+.MuiModal-root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .MuiBox-root {
+    border-radius: 4px;
+    border: none;
+    .MuiPaper-root {
+      padding: 25px;
+      .modal_head {
+        display: flex;
+        align-items: center;
+        img {
+          height: 16px;
+          padding-left: 8px;
+        }
+        .MuiTypography-h6 {
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-size: 16px;
+          color: #474848;
+        }
+      }
+    }
+    .modal_selectHeader {
+      margin-top: 40px;
+      .MuiTypography-h5 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 17px;
+        color: #474848;
+      }
+    }
+    .modal_select {
+      width: 320px;
+      margin-top: 20px;
+      .MuiOutlinedInput-root {
+        background-color: #f6f6f6;
+      }
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+        margin-bottom: 10px;
+      }
+    }
+    .modal_textarea {
+      margin-top: 30px;
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+      .MuiTextField-root {
+        width: 650px;
+        background-color: #f6f6f6;
+        .MuiInputBase-root {
+          border: 1px solid #f4f4f4;
+          border-radius: 3px;
+          background-color: #f6f6f6;
+        }
+      }
+    }
+    .modal_button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      .MuiButton-containedPrimary {
+        background: #6fb757;
+        border-radius: 20px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: none;
+        padding: 2px 40px;
+      }
+      .MuiButton-text {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        color: #6fb757;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+import React from "react";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+
+import ProfileImage from "../../assets/images/profileImage.png";
+import buildingIcon from "../../assets/images/buildingIcon.svg";
+import phoneCallIcon from "../../assets/images/phoneCallIcon.svg";
+import mailIcon from "../../assets/images/mailIcon.svg";
+import { Button, Divider, Grid } from "@mui/material";
+import RecentQuotes from "../RecentQuotesTable";
+
+const HomePage = () => {
+  return (
+    <div className="homePage_container">
+      <Grid container spacing={3} className="homePage_cards">
+        <Grid item sm={7} lg={8} className="homePage_getStarted">
+          <Card sx={{ display: "flex" }}>
+            <CardMedia
+              component="img"
+              sx={{ width: 230 }}
+              image={ProfileImage}
+              alt="Profile Image"
+            />
+            <Box>
+              <CardContent>
+                <Typography variant="h3">Start a new quote</Typography>
+                <Typography variant="subtitle1">
+                  Click below to get started.
+                </Typography>
+                <Button variant="contained">Create Quote</Button>
+              </CardContent>
+            </Box>
+          </Card>
+        </Grid>
+        <Grid item sm={5} lg={4} className="homePage_contactUs">
+          <Card>
+            <CardContent>
+              <div className="homePage_card_details">
+                <img src={buildingIcon} alt="Building Icon" />
+                <Typography variant="h6">
+                  Delta Insurance Australia Pty Ltd
+                </Typography>
+              </div>
+              <Divider sx={{ marginTop: "20px" }} />
+              <div className="homePage_after_divider">
+                <div className="homePage_card_details">
+                  <img src={phoneCallIcon} alt="Phone call Icon" />
+                  <div>
+                    <Typography variant="h6">Phone number</Typography>
+                    <Typography variant="h6" className="phoneNumber">
+                      +61 (07) 3017 4720
+                    </Typography>
+                  </div>
+                </div>
+                <div className="homePage_card_details email">
+                  <img src={mailIcon} alt="Mail Icon" />
+                  <div className="homePage_phoneNumber">
+                    <Typography variant="h6">Email</Typography>
+                    <Typography variant="h6" className="emailText">
+                      contactus@deltainsurance.com.au
+                    </Typography>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+      <div>
+        <RecentQuotes />
+      </div>
+    </div>
+  );
+};
+
+export default HomePage;

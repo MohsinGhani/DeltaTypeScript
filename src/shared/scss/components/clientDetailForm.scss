@@ -1,0 +1,112 @@
+.clientDetailForm_container {
+  width: 100%;
+  .clientDetailForm_header {
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    .MuiTypography-subtitle1 {
+      padding-left: 15px;
+      font-family: "Poppins-Bold";
+      font-size: 16px;
+      color: #474848;
+    }
+  }
+  .clientDetailForm_form {
+    .text {
+      background-color: #f6f6f6;
+    }
+    .clientDetailForm_cardContentHead {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    .clientDetailForm_companyName {
+      margin-top: 20px;
+      display: flex;
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+        padding-right: 10px;
+      }
+    }
+    .clientDetailForm_checkbox {
+      margin-top: 27px;
+      display: flex;
+      flex-direction: column;
+      div {
+        display: flex;
+        align-items: center;
+      }
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+    .clientDetailForm_occupation {
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+        margin-right: 10px;
+      }
+    }
+    .clientDetailForm_formBottomContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 33px;
+      .clientDetailForm_employees {
+        width: 48%;
+        .clientDetailForm_employeesHeading {
+          display: flex;
+          .MuiTypography-subtitle1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: #474848;
+            margin-right: 10px;
+          }
+        }
+        .clientDetailForm_employeesSelect {
+          width: 100%;
+          margin-top: 10px;
+          .MuiInputBase-root {
+            width: 100%;
+            background-color: #f6f6f6;
+          }
+        }
+      }
+      .clientDetailForm_annualTurnover {
+        width: 48%;
+        .clientDetailForm_annualHeading {
+          display: flex;
+          .MuiTypography-subtitle1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            color: #474848;
+            margin-right: 10px;
+          }
+        }
+        .clientDetailForm_annualSelect {
+          width: 100%;
+          margin-top: 10px;
+          .MuiInputBase-root {
+            width: 100%;
+            background-color: #f6f6f6;
+          }
+        }
+      }
+    }
+  }
+}

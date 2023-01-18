@@ -1,0 +1,96 @@
+.directors_container {
+  .directors_heading {
+    display: flex;
+    align-items: center;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      padding-left: 5px;
+      height: 14px;
+    }
+  }
+  .directors_checkboxQuestion {
+    margin-top: 25px;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: #474848;
+    }
+    img {
+      height: 16px;
+      padding-left: 5px;
+    }
+  }
+  .directors_checkbox {
+    .MuiFormControlLabel-root {
+      margin-right: 50px;
+      .MuiButtonBase-root {
+        padding: 8px;
+      }
+      .MuiTypography-root {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+  }
+  .directors_padding {
+    padding: 30px 0;
+  }
+  .directors_financialFormContainer {
+    .directors_financialHeadingContainer {
+      display: flex;
+      align-items: center;
+      .directors_financialHeading {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-right: 10px;
+        .MuiTypography-subtitle1 {
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          color: #474848;
+        }
+      }
+    }
+    .directors_financialFieldContainer {
+      padding: 15px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .directors_financialHeadingAndIcon {
+        display: flex;
+        align-items: center;
+        width: 30%;
+        .MuiTypography-subtitle1 {
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          font-size: 16px;
+          color: #474848;
+        }
+        img {
+          height: 16px;
+          padding-left: 5px;
+        }
+      }
+      .directors_financialFieldInput {
+        .MuiInputBase-root {
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-size: 15px;
+          border-radius: 6px;
+          color: #474848;
+          background-color: #f6f6f6;
+        }
+      }
+    }
+  }
+}

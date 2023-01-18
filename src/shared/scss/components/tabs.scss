@@ -1,0 +1,84 @@
+.tabs_container {
+  width: 100%;
+  .tabs_tabContainer {
+    background-color: #fff;
+  }
+  .tab_main {
+    padding-top: 28px;
+  }
+  .MuiTabs-root {
+    margin: 0 75px;
+    .MuiTabs-scroller {
+      .MuiTabs-flexContainer {
+        height: 63px;
+      }
+    }
+  }
+  .tab_contentContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    .MuiBreadcrumbs-ol {
+      .MuiBreadcrumbs-separator {
+        font-family: "Poppins", sans-serif;
+        color: #a5a4a4;
+        font-size: 12px;
+      }
+      .MuiBreadcrumbs-li {
+        font-family: "Poppins", sans-serif;
+        color: #a5a4a4;
+        font-size: 16px;
+        a {
+          text-decoration: none;
+          color: #a5a4a4;
+        }
+        .MuiTypography-subtitle1 {
+          font-family: "Poppins", sans-serif;
+          color: #a5a4a4;
+          font-size: 16px;
+        }
+      }
+    }
+    h3 {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-size: 30px;
+      color: #474848;
+    }
+    .tab_content {
+      .createQuoteForm {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .MuiBox-root {
+        padding: 24px 0;
+      }
+    }
+  }
+  .MuiTabs-flexContainer {
+    button {
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      color: #393939;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+  }
+  .MuiTabs-indicator {
+    background: #6fb757;
+  }
+  @include customRange(768, 825) {
+    .tab_contentContainer {
+      margin: 0 75px;
+    }
+  }
+  @include customRange(825, 1080) {
+    .tab_contentContainer {
+      margin: 0 75px;
+      .tab_content {
+        .homePage {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}

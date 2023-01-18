@@ -1,0 +1,199 @@
+.createQuoteStepper_container {
+  width: 100%;
+  margin: 20px 0;
+  .createQuoteStepper_steps {
+    .MuiStepper-root {
+      .MuiStep-root {
+        .MuiStepLabel-root {
+          .Mui-active,
+          .Mui-completed {
+            .MuiSvgIcon-root {
+              font-size: 25px;
+              color: #6fb757;
+            }
+          }
+          .MuiStepLabel-labelContainer {
+            .MuiStepLabel-label {
+              font-family: "Poppins", sans-serif;
+              font-weight: 600;
+              font-size: 15px;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .createQuoteStepper_content {
+    margin-top: 20px;
+    .MuiPaper-root {
+      border: 1px solid #e7ebf0;
+      box-shadow: none;
+      .createQuoteStepper_buttonContainer {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 40px;
+        a {
+          text-decoration: none;
+        }
+        .MuiButton-text {
+          text-transform: none;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          color: #6fb757;
+          font-size: 15px;
+        }
+        .MuiButton-contained {
+          text-transform: none;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          background: #6fb757;
+          font-size: 15px;
+          border-radius: 20px;
+          padding: 5px 30px;
+        }
+      }
+    }
+    .createQuoteStepper_withCard {
+      .MuiGrid-root {
+        // display: flex;
+        justify-content: space-between;
+        .createQuoteStepper_leftCard {
+          .MuiPaper-root {
+            border: 1px solid #e7ebf0;
+            box-shadow: none;
+            .createQuoteStepper_buttonContainer {
+              display: flex;
+              justify-content: space-between;
+              margin: 50px 40px;
+              a {
+                text-decoration: none;
+              }
+              .MuiButton-text {
+                text-transform: none;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                color: #6fb757;
+                font-size: 15px;
+              }
+              .MuiButton-contained {
+                text-transform: none;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                background: #6fb757;
+                font-size: 15px;
+                border-radius: 20px;
+                padding: 5px 30px;
+              }
+            }
+          }
+        }
+        .createQuoteStepper_rightCard {
+          .createQuoteStepper_cardHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 15px;
+            border-bottom: 1px solid #e7ebf0;
+            .cardHeader_summaryHead {
+              display: flex;
+              align-items: center;
+              .MuiTypography-h3 {
+                font-size: 15px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                color: #474848;
+              }
+              img {
+                padding-left: 5px;
+                height: 18px;
+              }
+            }
+          }
+          .MuiCardContent-root {
+            .cardSummary_price {
+              .MuiTypography-subtitle1 {
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                color: #a5a4a4;
+                font-size: 14px;
+              }
+              .cardSummary_price {
+                display: flex;
+                align-items: baseline;
+                padding-bottom: 22px;
+                border-bottom: 5px solid #ccdb67;
+                .MuiTypography-subtitle1 {
+                  font-family: "Poppins", sans-serif;
+                  font-weight: 400;
+                  color: #656565;
+                  font-size: 11px;
+                  font-style: italic;
+                }
+                .MuiTypography-h2 {
+                  font-family: "Poppins", sans-serif;
+                  font-weight: 700;
+                  font-size: 45px;
+                  color: #474848;
+                }
+              }
+            }
+            .cardSummary_products {
+              border-bottom: 5px solid #ccdb67;
+              .MuiTypography-h3 {
+                margin-top: 12px;
+                font-size: 14px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                color: #474848;
+              }
+              .MuiTypography-subtitle1 {
+                margin-top: 12px;
+                margin-bottom: 68px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 400;
+                color: #656565;
+                font-size: 13px;
+                font-style: italic;
+              }
+            }
+            .cardSummary_clientInfo {
+              margin-bottom: 22px;
+              .MuiTypography-h3 {
+                margin-top: 12px;
+                font-size: 14px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 600;
+                color: #474848;
+              }
+              .cardSummary_infoContainer {
+                display: flex;
+                align-items: center;
+                margin-top: 15px;
+                .MuiTypography-subtitle1 {
+                  padding-left: 10px;
+                  font-family: "Poppins", sans-serif;
+                  font-weight: 500;
+                  color: #343434;
+                  font-size: 14px;
+                }
+              }
+            }
+            .cardSummary_button {
+              .MuiButtonBase-root {
+                text-transform: none;
+                font-family: "Poppins", sans-serif;
+                color: #ffffff;
+                background: #474848;
+                font-weight: 500;
+                font-size: 15px;
+                border-radius: 20px;
+                padding: 0 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

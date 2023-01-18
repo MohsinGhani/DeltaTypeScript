@@ -1,0 +1,81 @@
+.resources_container {
+  margin-top: 25px;
+  .MuiPaper-root {
+    box-shadow: none;
+    border: 1px solid #e7ebf0;
+  }
+  .resources_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 24px;
+    .MuiButtonBase-root {
+      border-radius: 20px;
+      font-family: "Poppins-Regular";
+      padding: 3px 35px;
+      font-weight: 600;
+      font-size: 14px;
+      background: #6fb757;
+      box-shadow: none;
+      text-transform: none;
+    }
+    .MuiTypography-root {
+      font-family: "Poppins-Bold";
+      font-size: 16px;
+      color: #474848;
+      margin-top: 11px;
+    }
+  }
+  .resources_searchBox {
+    .MuiFormControl-root {
+      width: 450px;
+      margin-left: 20px;
+      margin-top: 30px;
+      .MuiInputBase-root {
+        border-radius: 20px;
+        background-color: #f5f5f5;
+        .MuiInputBase-input {
+          height: 41px;
+          padding: 0;
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  .resources_accordion {
+    margin: 20px 21px;
+    border: none;
+    .MuiButtonBase-root {
+      border-top: 7px solid #ccdb67;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+    }
+    .MuiTypography-h3 {
+      font-weight: 700;
+      font-size: 40px;
+      color: #474848;
+      margin: 0 15px;
+    }
+    .MuiTypography-subtitle1 {
+      color: #474848;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      margin: 0 15px;
+    }
+    .MuiPaper-root {
+      border: none;
+    }
+  }
+  @include md {
+    .resources_accordion {
+      .MuiTypography-h3 {
+        font-weight: 700;
+        font-size: 30px;
+      }
+    }
+  }
+}

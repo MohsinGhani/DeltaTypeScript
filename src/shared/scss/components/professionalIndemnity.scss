@@ -1,0 +1,59 @@
+.indemnityquestions_container {
+  .indemnityquestions_heading {
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+  }
+  .indemnityquestions_checkbox {
+    margin-top: 20px;
+    .MuiFormControlLabel-root {
+      margin-right: 50px;
+      .MuiButtonBase-root {
+        padding: 8px;
+      }
+      .MuiTypography-root {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+    .indemnityquestions_checkboxHeading {
+      display: flex;
+      align-items: center;
+      img {
+        padding-left: 5px;
+        height: 16px;
+      }
+    }
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #474848;
+    }
+  }
+  .indemnityquestions_statement {
+    margin-top: 35px;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #474848;
+    }
+  }
+  // .MuiFormControlLabel-root {
+  //   margin-right: 42px;
+  // }
+  .directors_checkbox {
+    .MuiTypography-body1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #474848;
+    }
+  }
+}

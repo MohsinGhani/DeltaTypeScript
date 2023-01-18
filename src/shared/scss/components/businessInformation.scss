@@ -1,0 +1,219 @@
+.businessInfo_container {
+  .businessInfo_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      padding-left: 5px;
+      height: 16px;
+    }
+  }
+  .businessInfo_addressSearch {
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #474848;
+    }
+    .MuiInputBase-root {
+      width: 100%;
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0;
+      border-radius: 5px;
+      background-color: #f6f6f6;
+    }
+  }
+  .MuiTypography-body2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: #a7a5a5;
+    padding: 5px 25px;
+  }
+  .businessInfo_locationsAndDate {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    .businessInfo_locationNumberContainer {
+      width: 48%;
+      .businessInfo_locationNumber {
+        display: flex;
+        align-items: center;
+        .MuiTypography-subtitle1 {
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          color: #474848;
+        }
+        img {
+          padding-left: 5px;
+        }
+      }
+      .businessInfo_locationSelect {
+        margin-top: 10px;
+        .MuiInputBase-root {
+          width: 100%;
+          background-color: #f6f6f6;
+        }
+      }
+    }
+    .businessInfo_policyPeriodContainer {
+      width: 48%;
+      .businessInfo_policyPeriod {
+        display: flex;
+        align-items: center;
+        .MuiTypography-subtitle1 {
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          color: #474848;
+        }
+        img {
+          padding-left: 5px;
+        }
+      }
+      .businessInfo_policyDateContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .MuiFormControl-root {
+          width: 100%;
+          background-color: #f6f6f6;
+          .MuiInputBase-root {
+            width: 100%;
+          }
+        }
+        .MuiTypography-subtitle1 {
+          font-family: "Poppins", sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+          color: #474848;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+  .businessInfo_detailHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      padding-left: 5px;
+      height: 16px;
+    }
+  }
+  .businessInfo_checkbox {
+    margin-top: 40px;
+    .MuiFormControlLabel-root {
+      margin-right: 50px;
+      .MuiButtonBase-root {
+        padding: 8px;
+      }
+      .MuiTypography-root {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #474848;
+    }
+  }
+  .businessInfo_stampMeasure {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: #474848;
+    }
+    img {
+      padding-left: 5px;
+    }
+  }
+  .businessInfo_stampMeasureSelect {
+    width: 200px;
+
+    .MuiInputBase-root {
+      width: 100%;
+      background-color: #f6f6f6;
+    }
+  }
+
+  .businessInfo_details {
+    margin-top: 25px;
+    .MuiTypography-subtitle {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #474848;
+    }
+
+    img {
+      height: 16px;
+      margin-top: 10px;
+    }
+  }
+  .businessInfo_table {
+    border: 1px solid #e7ebf0;
+    border-radius: 3px;
+    margin-top: 20px;
+    .MuiTable-root {
+      .MuiTableHead-root {
+        .MuiTableRow-root {
+          .MuiTableCell-root {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #474848;
+          }
+        }
+      }
+      .MuiTableBody-root {
+        .MuiTableRow-root {
+          .MuiTableCell-root {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #474848;
+          }
+        }
+      }
+    }
+    .businessInfo_tablePrice {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding: 25px 40px;
+      .MuiTypography-subtitle1 {
+        margin-left: 50px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: #474848;
+      }
+    }
+  }
+}

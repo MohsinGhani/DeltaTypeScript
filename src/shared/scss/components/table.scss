@@ -1,0 +1,57 @@
+.table_container {
+  width: 100%;
+  .MuiPaper-root {
+    .MuiTableBody-root {
+      .MuiTableRow-root {
+        .MuiTableCell-root {
+          font-family: "Poppins-Regular";
+        }
+      }
+    }
+    box-shadow: none;
+    .MuiTable-root {
+      .MuiTableHead-root {
+        background-color: #f6f6f6;
+        .MuiTableRow-root {
+          .MuiTableCell-root {
+            font-weight: 700;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            color: #515151;
+            letter-spacing: 0;
+          }
+        }
+      }
+      .MuiTableFooter-root {
+        .MuiTableRow-root {
+          .MuiTableCell-root {
+            .MuiToolbar-root {
+              .MuiTablePagination-displayedRows {
+                padding: 0;
+                font-size: 14px;
+                color: #555454;
+                font-weight: 600;
+                font-family: "poppins", sans-serif;
+              }
+              .MuiTablePagination-selectLabel {
+                padding: 0;
+                font-size: 14px;
+                color: #555454;
+                font-weight: 600;
+                font-family: "poppins", sans-serif;
+              }
+              p {
+                padding: 0;
+                font-size: 14px;
+                color: #515151;
+              }
+              .tableButtons {
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

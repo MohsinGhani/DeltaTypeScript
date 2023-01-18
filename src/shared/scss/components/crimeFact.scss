@@ -1,0 +1,60 @@
+.crimequestions_container {
+  .crimequestions_heading {
+    display: flex;
+    align-items: center;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      height: 16px;
+      padding-left: 5px;
+    }
+  }
+  .crimequestions_statement {
+    margin-top: 15px;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: #474848;
+    }
+  }
+  .MuiTypography-subtitle1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #474848;
+  }
+  .crimequestions_checkbox {
+    .MuiFormControlLabel-root {
+      margin-right: 50px;
+      .MuiButtonBase-root {
+        padding: 8px;
+      }
+      .MuiTypography-root {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+  }
+  .crimequestions_social {
+    margin-top: 50px;
+    .MuiFormControlLabel-root {
+      margin-right: 50px;
+      .MuiButtonBase-root {
+        padding: 8px;
+      }
+      .MuiTypography-root {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+  }
+}

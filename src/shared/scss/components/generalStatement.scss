@@ -1,0 +1,41 @@
+.generalstatement_container {
+  .generalstatement_heading {
+    display: flex;
+    align-items: center;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: #474848;
+    }
+    img {
+      height: 16px;
+      padding-left: 5px;
+    }
+  }
+  .generalstatement_text {
+    margin-top: 15px;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: #474848;
+      letter-spacing: 0;
+    }
+  }
+  .generalstatement_checkbox {
+    margin-top: 15px;
+    .MuiFormControlLabel-root {
+      margin-right: 50px;
+      .MuiButtonBase-root {
+        padding: 8px;
+      }
+      .MuiTypography-root {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+  }
+}

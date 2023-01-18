@@ -1,0 +1,142 @@
+.MuiDialog-container {
+  .MuiPaper-root {
+    .MuiDialogContent-root {
+      .modalConfirmation_header {
+        .MuiTypography-h6 {
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-size: 16px;
+          color: #474848;
+          margin-bottom: 20px;
+        }
+      }
+      img {
+        margin: 22px 0;
+      }
+      .MuiTypography-h6 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: #474848;
+      }
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #474848;
+      }
+      .modalConfirmation_emailContainer {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        .modalConfirmation_emailText {
+          padding-left: 25px;
+          .MuiTypography-subtitle1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: #474848;
+          }
+          .email {
+            font-family: "Poppins", sans-serif;
+            color: #5ebab5;
+            font-weight: 500;
+            font-size: 18px;
+            cursor: pointer;
+          }
+        }
+      }
+      .modalConfirmation_backButton {
+        display: flex;
+        justify-content: center;
+        margin: 50px 0 20px 0;
+        .MuiButtonBase-root {
+          background: #6fb757;
+          border-radius: 20px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+          text-transform: none;
+          color: #fff;
+          padding: 0 40px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+// .MuiDialogContent-root {
+//   -ms-overflow-style: none;
+//   height: 509px;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+//   .MuiTypography-email {
+//     font-family: "Poppins";
+//     font-weight: 500;
+//     font-size: 18px;
+//     text-decoration-line: underline;
+//     color: #5ebab5;
+//   }
+//   .MuiTypography-subtitle1 {
+//     font-family: "Poppins";
+//     font-weight: 600;
+//     font-size: 17px;
+//     color: #474848;
+//     margin-bottom: 20px;
+//     margin-top: 10px;
+//   }
+//   .MuiDivider-root {
+//     margin-bottom: 15px;
+//   }
+//   .MuiTypography-h5 {
+//     font-family: "Poppins";
+//     font-weight: 700;
+//     font-size: 15px;
+//     margin-bottom: 20px;
+//     margin-top: 10px;
+//     color: #474848;
+//   }
+//   .modalConfirmation_mailbox {
+//     display: flex;
+//     flex-direction: row;
+//     margin-top: 40px;
+//     img {
+//       margin-right: 20px;
+//       margin-bottom: 18px;
+//     }
+//     .mailemail {
+//       margin-bottom: 14px;
+//       display: flex;
+//       flex-direction: column;
+//       font-family: "Poppins";
+
+//       font-weight: 700;
+//       font-size: 14px;
+
+//       color: #474848;
+//     }
+//   }
+//   .modalConfirmation_backButton {
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 20px;
+//     .MuiButton-root {
+//       width: 155px;
+//       height: 26px;
+//       text-transform: none;
+//       color: #ffffff;
+//       background: #6fb757;
+//       border-radius: 19.5924px;
+//       font-family: "Poppins";
+
+//       font-weight: 600;
+//       font-size: 14px;
+
+//       color: #ffffff;
+//     }
+//   }
+//   .MuiDialog-container {
+//     height: 573px;
+//   }
+// }

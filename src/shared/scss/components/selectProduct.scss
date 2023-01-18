@@ -1,0 +1,167 @@
+.products_container {
+  width: 100%;
+  .products_header {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 25px;
+    .MuiTypography-h6 {
+      padding-left: 15px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #474848;
+    }
+  }
+  .products_heading {
+    display: flex;
+    align-items: center;
+    padding: 20px 25px;
+    .MuiTypography-h6 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      height: 16px;
+      margin-left: 6px;
+    }
+  }
+  .productCard_container {
+    padding: 0 25px;
+    display: flex;
+    gap: 30px;
+    .MuiPaper-root {
+      width: 225px;
+      border-radius: 6px;
+      .MuiCardContent-root {
+        .productCard_imageAndButton {
+          display: flex;
+          justify-content: space-between;
+          height: 80px;
+          .MuiButtonBase-root {
+            border-radius: 15px;
+            height: 25px;
+            border: 1px solid #474848;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: none;
+            color: #474848;
+          }
+        }
+        .productCard_info {
+          display: flex;
+          align-items: center;
+          margin-top: 16px;
+          height: 100px;
+          .MuiTypography-h4 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 25px;
+            color: #474848;
+          }
+          img {
+            height: 20px;
+          }
+        }
+        .productCard_bottom {
+          margin-top: 15px;
+          .MuiTypography-root {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            color: #474848;
+          }
+        }
+      }
+    }
+  }
+  .moreProducts_heading {
+    display: flex;
+    align-items: center;
+    padding: 37px 25px 20px 25px;
+    .MuiTypography-h6 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      height: 16px;
+      margin-left: 6px;
+    }
+  }
+  .moreProductCard_container {
+    padding: 0 25px;
+    display: flex;
+    gap: 30px;
+    .MuiPaper-root {
+      width: 225px;
+      border-radius: 6px;
+      .MuiCardContent-root {
+        .moreProductCard_imageAndButton {
+          display: flex;
+          justify-content: space-between;
+          height: 80px;
+          .MuiButtonBase-root {
+            border-radius: 15px;
+            height: 25px;
+            border: 1px solid #474848;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: none;
+            color: #474848;
+          }
+        }
+        .moreProductCard_info {
+          display: flex;
+          align-items: center;
+          margin-top: 16px;
+          height: 100px;
+          .MuiTypography-h4 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 25px;
+            color: #474848;
+          }
+          img {
+            height: 20px;
+          }
+        }
+        .moreProductCard_bottom {
+          margin-top: 15px;
+          .MuiTypography-root {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 12px;
+            color: #474848;
+          }
+        }
+      }
+    }
+  }
+  // @include customRange(768, 826) {
+  //   .productCard_info {
+  //     margin-top: 0;
+  //   }
+  // }
+  @include customRange(768, 1080) {
+    .productCard_imageAndButton {
+      height: auto !important;
+    }
+    .moreProductCard_imageAndButton {
+      height: auto !important;
+    }
+    .productCard_info {
+      margin-top: 0;
+    }
+  }
+  // @include customRange(769, 1080) {
+  //   .productCard_imageAndButton {
+  //     border: 1px solid red;
+  //     height: none;
+  //   }
+  // }
+}

@@ -1,0 +1,177 @@
+.bindCover_container {
+  .bindCover_header {
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    .MuiTypography-subtitle1 {
+      padding-left: 15px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #474848;
+    }
+  }
+  .bindCover_quote {
+    display: flex;
+    align-items: center;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      height: 16px;
+      padding-left: 5px;
+    }
+  }
+  .bindCover_sliderContainer {
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      color: #474848;
+      margin-top: 22px;
+    }
+    .bindCover_slider {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 50%;
+      .MuiSlider-root {
+        color: white;
+        height: 9px;
+        border-radius: 20px;
+        .MuiSlider-rail {
+          border: 1px solid grey;
+        }
+        .MuiSlider-thumb {
+          background-color: #fff;
+          border: 1px solid #6fb757;
+          width: 25px;
+          height: 25px;
+        }
+        .MuiSlider-track {
+          color: #6fb757;
+        }
+      }
+      .MuiInputBase-root {
+        margin-left: 15px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+  }
+  .bindCover_table {
+    margin-top: 20px;
+    .MuiPaper-root {
+      .MuiTableContainer-root {
+        .MuiTable-root {
+          .MuiTableCell-body {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #474848;
+            padding: 16px 0;
+            .MuiInputBase-root {
+              width: 90%;
+              border-style: none;
+              background-color: #f6f6f6;
+              .MuiSelect-select {
+                padding: 10px 14px;
+              }
+            }
+          }
+          .MuiTableHead-root {
+            .MuiTableRow-root {
+              .MuiTableCell-root {
+                font-family: "Poppins", sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                color: #474848;
+                padding: 16px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .bindCover_feeBreakdownTable {
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #474848;
+    }
+    .MuiPaper-root {
+      .MuiTableHead-root {
+        .MuiTableRow-root {
+          .MuiTableCell-root {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+            color: #474848;
+          }
+        }
+      }
+      .MuiTable-root {
+        .MuiTableBody-root {
+          .MuiTableRow-root {
+            .MuiTableCell-root {
+              font-family: "Poppins", sans-serif;
+              font-weight: 400;
+              font-size: 14px;
+              color: #474848;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bindCover_quoteTable {
+    .MuiPaper-root {
+      .MuiTableContainer-root {
+        .MuiTable-root {
+          .MuiTableHead-root {
+            .MuiTableCell-root {
+              font-family: "Poppins", sans-serif;
+              font-weight: 700;
+              font-size: 14px;
+              color: #474848;
+              padding: 16px 0;
+              .bindCover_quoteTableHeaderButton {
+                display: flex;
+                justify-content: flex-end;
+                .MuiButtonBase-root {
+                  font-family: "Poppins", sans-serif;
+                  text-transform: none;
+                  background: #474848;
+                  border-radius: 20px;
+                  margin: 0 15px;
+                }
+              }
+            }
+          }
+          .MuiTableBody-root {
+            .MuiTableCell-root {
+              font-family: "Poppins", sans-serif;
+              font-weight: 500;
+              font-size: 14px;
+              color: #474848;
+              padding: 16px 0;
+              .download_icon {
+                margin-right: 50px;
+                img {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

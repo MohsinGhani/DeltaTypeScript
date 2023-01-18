@@ -1,0 +1,93 @@
+.homePage_container {
+  .homePage_cards {
+    display: flex;
+    align-items: center;
+    .homePage_getStarted {
+      .MuiPaper-root {
+        box-shadow: none;
+        border: 1px solid #e7ebf0;
+        border-radius: 9px;
+        .MuiBox-root {
+          display: flex;
+          .MuiCardContent-root {
+            padding: 16px 50px;
+            .MuiTypography-h3 {
+              color: #474848;
+              font-size: 45px;
+              font-family: "Poppins-SemiBold";
+            }
+            .MuiTypography-subtitle1 {
+              font-size: 14px;
+              font-family: "Poppins", sans-serif;
+              margin-top: 10px;
+            }
+            .MuiButtonBase-root {
+              background: #6fb757;
+              text-transform: none;
+              border-radius: 20px;
+              width: 135px;
+              height: 25px;
+              margin-top: 20px;
+              font-family: "Poppins-Regular";
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    .homePage_contactUs {
+      .homePage_card_details {
+        display: flex;
+        align-items: center;
+        .MuiTypography-h6 {
+          margin-left: 13px;
+          font-weight: 600;
+          font-size: 16px;
+          color: #474848;
+          font-family: "Poppins-SemiBold";
+        }
+        .phoneNumber {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      .email {
+        margin-top: 40px;
+      }
+
+      .homePage_after_divider {
+        margin-top: 24px;
+        .emailText {
+          color: #5ebab5;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+      .MuiPaper-root {
+        box-shadow: none;
+        border: 1px solid #e7ebf0;
+        border-radius: 9px;
+      }
+    }
+  }
+  @include customRange(768, 1267) {
+    .homePage_cards {
+      display: flex;
+      .homePage_getStarted {
+        .MuiPaper-root {
+          img {
+            width: 150px;
+          }
+          .MuiBox-root {
+            .MuiCardContent-root {
+              .MuiTypography-h3 {
+                font-size: 25px;
+                font-family: "Poppins-SemiBold";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

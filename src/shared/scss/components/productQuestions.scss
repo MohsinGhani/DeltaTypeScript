@@ -1,0 +1,25 @@
+.customizedaccordions_container {
+  .MuiPaper-root {
+    .MuiButtonBase-root {
+      padding: 5px 20px;
+      .MuiAccordionSummary-content {
+        display: flex;
+        align-items: center;
+        .MuiTypography-subtitle1 {
+          font-family: "Poppins", sans-serif;
+          font-size: 15px;
+          letter-spacing: 0;
+          padding-left: 13px;
+          color: #474848;
+          font-weight: 700;
+        }
+      }
+    }
+    .MuiCollapse-root {
+      .MuiAccordionDetails-root {
+        border-top: 1px solid #e7ebf0;
+        padding: 20px 45px 60px 25px;
+      }
+    }
+  }
+}

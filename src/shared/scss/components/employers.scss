@@ -1,0 +1,45 @@
+.employerquestions_container {
+  .employerquestions_heading {
+    display: flex;
+    align-items: center;
+    .MuiTypography-subtitle1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #474848;
+    }
+    img {
+      padding-left: 5px;
+      height: 14px;
+    }
+  }
+  .employerquestions_applicant {
+    margin-top: 35px;
+    .employerquestions_applicantText {
+      display: flex;
+      align-items: center;
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+        letter-spacing: 0;
+        img {
+          padding-left: 5px;
+          height: 15px;
+        }
+      }
+    }
+    .MuiFormControlLabel-root {
+      .MuiButtonBase-root {
+        padding: 10px;
+      }
+      .MuiTypography-root {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        color: #474848;
+      }
+    }
+  }
+}
