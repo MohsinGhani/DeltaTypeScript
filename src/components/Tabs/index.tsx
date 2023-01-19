@@ -92,7 +92,7 @@ const MenuTabs = () => {
         <Box sx={{ border: 1, borderColor: "divider" }}>
           <Tabs value={activeTab}>
             {tabs.map((tab) => (
-              <Tab label={tab.label} onClick={() => navigation(tab.link)} />
+              <Tab disableRipple label={tab.label} onClick={() => navigation(tab.link)} />
             ))}
           </Tabs>
         </Box>

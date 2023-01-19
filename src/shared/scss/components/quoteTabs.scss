@@ -7,6 +7,10 @@
   margin-bottom: 30px;
   .MuiTabs-root {
     margin: 0 25px;
+    .your_quotes {
+      display: flex;
+      flex-direction: row;
+    }
   }
   .MuiTabs-flexContainer {
     button {
@@ -29,7 +33,7 @@
       background-color: #6fb757;
       border-radius: 20px;
       color: white;
-      margin-top: 17px;
+      margin-top: 20px;
       padding-left: 20px;
       padding-right: 20px;
       font-family: "Poppins-Regular";
@@ -38,6 +42,7 @@
       height: 30px;
       color: #ffffff;
       text-transform: none;
+      margin-right: 30px;
     }
   }
   .modal_textarea {

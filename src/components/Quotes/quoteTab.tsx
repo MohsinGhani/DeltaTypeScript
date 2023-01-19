@@ -1,4 +1,5 @@
 import { Tab, Tabs, Typography } from "@mui/material";
+import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
 import React, { ReactNode, useState } from "react";
 import NewBusinessQuoteTab from "./quoteSearchFilter";
@@ -39,10 +40,14 @@ const QuoteTabs = () => {
 
   return (
     <div className="quoteTabs_container">
+      <div className="your_quotes">
       <Tabs value={value}onChange={handleChange} >
         <Tab label="New Business" {...a11yProps(0)} />
         <Tab label="Renewals" {...a11yProps(1)} />
       </Tabs>
+      <Button>Create Quote</Button>
+
+      </div>
 
       <TabPanel value={value} index={0}>
         <NewBusinessQuoteTab />
@@ -50,6 +55,7 @@ const QuoteTabs = () => {
       <TabPanel value={value} index={1}>
         Renewals
       </TabPanel>
+
     </div>
   );
 };
