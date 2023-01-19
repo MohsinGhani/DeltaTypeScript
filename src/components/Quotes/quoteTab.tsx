@@ -45,9 +45,8 @@ const QuoteTabs = () => {
         <Tab label="New Business" {...a11yProps(0)} />
         <Tab label="Renewals" {...a11yProps(1)} />
       </Tabs>
-      {/* <Button>Create Quote</Button> */}
+      
       <Button>Create Quote</Button>
-
       </div>
 
       <TabPanel value={value} index={0}>

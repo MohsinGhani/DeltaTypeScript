@@ -34,6 +34,31 @@
   .tab_contentContainer {
     max-width: 1200px;
     margin: 0 auto;
+    .tab_content {
+      .quotePage {
+        .quoteTabs_container {
+          .your_quotes {
+            display: flex;
+            justify-content: space-between;
+            .MuiButton-root {
+              background-color: #6fb757;
+              border-radius: 20px;
+              color: white;
+              margin-top: 20px;
+              padding-left: 20px;
+              padding-right: 20px;
+              font-family: "Poppins-Regular";
+              font-weight: 600;
+              font-size: 14px;
+              height: 30px;
+              color: #ffffff;
+              text-transform: none;
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
     .MuiBreadcrumbs-ol {
       .MuiBreadcrumbs-separator {
         font-family: "Poppins", sans-serif;
@@ -92,29 +117,6 @@
     .tab_contentContainer {
       margin: 0 75px;
       .tab_content {
-        .quotePage {
-          .quoteTabs_container {
-            .your_quotes {
-              display: flex;
-              justify-content: space-between;
-              .MuiButton-root {
-                background-color: #6fb757;
-                border-radius: 20px;
-                color: white;
-                margin-top: 20px;
-                padding-left: 20px;
-                padding-right: 20px;
-                font-family: "Poppins-Regular";
-                font-weight: 600;
-                font-size: 14px;
-                height: 30px;
-                color: #ffffff;
-                text-transform: none;
-                margin-right: 30px;
-              }
-            }
-          }
-        }
         .homePage {
           margin: 0px;
         }

@@ -4,15 +4,26 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-
+import { useNavigate } from "react-router-dom";
 import ProfileImage from "../../assets/images/profileImage.png";
 import buildingIcon from "../../assets/images/buildingIcon.svg";
 import phoneCallIcon from "../../assets/images/phoneCallIcon.svg";
 import mailIcon from "../../assets/images/mailIcon.svg";
 import { Button, Divider, Grid } from "@mui/material";
 import RecentQuotes from "../RecentQuotesTable";
+import CreateQuoteForm from "../createQuoteStepper";
 
 const HomePage = () => {
+
+
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    // let path = `newPath`; 
+    navigate("/create-quote");
+  }
+  
+ 
+ 
   return (
     <div className="homePage_container">
       <Grid container spacing={3} className="homePage_cards">
@@ -30,7 +41,11 @@ const HomePage = () => {
                 <Typography variant="subtitle1">
                   Click below to get started.
                 </Typography>
-                <Button variant="contained">Create Quote</Button>
+                <Button 
+onClick={routeChange}
+                variant="contained">Create Quote
+            
+                </Button>
               </CardContent>
             </Box>
           </Card>
