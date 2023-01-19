@@ -60,7 +60,7 @@ const BusinessInformantion = () => {
             </InputAdornment>
           }
         />
-      </div>z
+      </div>
       <Typography variant="body2">
         You can also choose to type free text
       </Typography>

@@ -14,6 +14,21 @@
   .clientDetailForm_form {
     .text {
       background-color: #f6f6f6;
+      .MuiAutocomplete-root {
+        width: 100%;
+        background-color: #f6f6f6;
+        font-family: "Poppins-Regular";
+        .MuiFormControl-root {
+          .MuiInputBase-root {
+            background-color: #f6f6f6;
+            font-family: "Poppins-Regular";
+            .MuiOutlinedInput-input {
+              background-color: #f6f6f6;
+              font-family: "Poppins-Regular";
+            }
+          }
+        }
+      }
     }
     .clientDetailForm_cardContentHead {
       font-family: "Poppins", sans-serif;
@@ -104,6 +119,7 @@
           .MuiInputBase-root {
             width: 100%;
             background-color: #f6f6f6;
+            // font-family: "Poppins-Regular";
           }
         }
       }

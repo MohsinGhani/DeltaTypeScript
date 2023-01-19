@@ -3,7 +3,7 @@
     {
       "key": 0,
       "title": "Professional Indemnity",
-      "image": "/assets/images/pro_indemnity.svg",
+      "image": "../../assets/images/pro_indemnity.svg",
       "alt": "Professional Indemnity",
       "selected": false
     },
