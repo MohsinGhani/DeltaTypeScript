@@ -56,7 +56,7 @@ const ClientDetailForm = () => {
               Trading name (if different)
             </Typography>
             <div>
-              <Checkbox className="check" {...label} />
+              <Checkbox checked  className="check" {...label} />
               <Typography variant="subtitle1">
                 Same or not applicable
               </Typography>

@@ -39,7 +39,8 @@ const QuotesModal = ({open, handleOpen, handleClose } : any) => {
               <Paper>
                 <>
                   <div className="modal_head">
-                    <Typography variant="h6">Manage client</Typography>
+                    <Typography variant="h6">Refer client</Typography>
+                    
                     <img src={InfoIcon} alt="Client details" />
                   </div>
                   <div className="modal_selectHeader">
@@ -54,12 +55,15 @@ const QuotesModal = ({open, handleOpen, handleClose } : any) => {
                       <Select
                         value={select}
                         label="Select action"
+              
                         onChange={(e)=>handleChange(e)}
                       >
                         <MenuItem value={10}>Make mid-term adjustment</MenuItem>
                         <MenuItem value={20}>Cancel Policy</MenuItem>
                         <MenuItem value={30}>Notify of loss</MenuItem>
                       </Select>
+<br></br>
+                         <TextField  type="file"/>
                     </FormControl>
                   </div>
                   <div className="modal_textarea">

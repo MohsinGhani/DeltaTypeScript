@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, FormControlLabel, Typography } from "@mui/material";
+import { Button, Checkbox, FormControlLabel, Typography } from "@mui/material";
 
 const GeneralStatement = () => {
   return (
@@ -36,12 +36,7 @@ const GeneralStatement = () => {
         <FormControlLabel control={<Checkbox />} label="Yes" />
         <FormControlLabel control={<Checkbox />} label="No" />
       </div>
-      {/* <div className="createQuoteStepper_buttonContainer">
-        <Button>Back</Button>
-        <Button variant="contained" color="primary">
-          Next
-        </Button>
-      </div> */}
+  
     </div>
   );
 };

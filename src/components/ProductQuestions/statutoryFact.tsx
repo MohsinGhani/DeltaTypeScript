@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox, FormControlLabel, Typography } from "@mui/material";
+import { Button, Checkbox, FormControlLabel, Typography } from "@mui/material";
 
 import InfoIcon from "../../assets/images/infoIcon.svg";
 
@@ -35,12 +35,7 @@ const StatutoryFact = () => {
         <FormControlLabel control={<Checkbox />} label="Yes" />
         <FormControlLabel control={<Checkbox />} label="No" />
       </div>
-      {/* <div className="createQuoteStepper_buttonContainer">
-        <Button>Back</Button>
-        <Button variant="contained" color="primary">
-          Next
-        </Button>
-      </div> */}
+  
     </div>
   );
 };
