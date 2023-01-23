@@ -20,13 +20,18 @@ import mailIcon from "../../assets/images/mailIcon.svg";
 import checkIcon from "../../assets/images/checkImage.svg";
 import InfoIcon from "../../assets/images/infoIcon.svg";
 
-
-const QuotesModal = ({open, handleOpen, handleClose } : any) => {
+const QuotesModal = ({
+  open,
+  handleOpen,
+  handleClose,
+  title,
+  subtitle,
+  isFilePick,
+}: any) => {
   const [select, setSelect] = useState<string>();
   const [isOpen, setIsOpen] = useState(false);
-  
 
-  const handleChange = (event : SelectChangeEvent<string> ) => {
+  const handleChange = (event: SelectChangeEvent<string>) => {
     setSelect(event.target.value);
   };
 
@@ -39,14 +44,12 @@ const QuotesModal = ({open, handleOpen, handleClose } : any) => {
               <Paper>
                 <>
                   <div className="modal_head">
-                    <Typography variant="h6">Refer client</Typography>
-                    
+                    <Typography variant="h6">{title}</Typography>
+
                     <img src={InfoIcon} alt="Client details" />
                   </div>
                   <div className="modal_selectHeader">
-                    <Typography variant="h5">
-                      Select an action to manage your client
-                    </Typography>
+                    <Typography variant="h5">{subtitle}</Typography>
                   </div>
                   <div className="modal_select">
                     <Typography variant="subtitle1">Action</Typography>
@@ -55,15 +58,14 @@ const QuotesModal = ({open, handleOpen, handleClose } : any) => {
                       <Select
                         value={select}
                         label="Select action"
-              
-                        onChange={(e)=>handleChange(e)}
+                        onChange={(e) => handleChange(e)}
                       >
                         <MenuItem value={10}>Make mid-term adjustment</MenuItem>
                         <MenuItem value={20}>Cancel Policy</MenuItem>
                         <MenuItem value={30}>Notify of loss</MenuItem>
                       </Select>
-<br></br>
-                         <TextField  type="file"/>
+                      <br></br>
+                      {isFilePick ? <TextField type="file" /> : null}
                     </FormControl>
                   </div>
                   <div className="modal_textarea">

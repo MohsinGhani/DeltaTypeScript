@@ -6,17 +6,21 @@ import NewBusinessPolicyTab from "./policiesSearchFilter";
 import Modal from "../Modal";
 import { ReactNode } from "react";
 
-type Iprops ={
-  children:ReactNode
-  value: number
-  index: number
-
-}
+type Iprops = {
+  children: ReactNode;
+  value: number;
+  index: number;
+};
 function TabPanel(props: Iprops) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div hidden={value !== index} id={`${index}`} aria-labelledby={index.toString()} {...other}>
+    <div
+      hidden={value !== index}
+      id={`${index}`}
+      aria-labelledby={index.toString()}
+      {...other}
+    >
       {value === index && (
         <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
@@ -30,11 +34,16 @@ const PolicyTabs = () => {
   const [value, setValue] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const handleChange = (event  : React.ChangeEvent<HTMLInputElement> |  React.SyntheticEvent<Element, Event>, newValue : number) => {
-    setValue(newValue );
+  const handleChange = (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.SyntheticEvent<Element, Event>,
+    newValue: number
+  ) => {
+    setValue(newValue);
   };
 
-  function a11yProps(index : number) {
+  function a11yProps(index: number) {
     return {
       id: `simple-tab-${index}`,
       "aria-controls": `simple-tabpanel-${index}`,
@@ -52,7 +61,14 @@ const PolicyTabs = () => {
       <TabPanel value={value} index={0}>
         <NewBusinessPolicyTab />
       </TabPanel>
-      {open  && <Modal open={open} handleClose={() => setOpen(!open)} />}
+      {open && (
+        <Modal
+          open={open}
+          handleClose={() => setOpen(!open)}
+          title="Manage client"
+          subtitle="Select an action to manage your client"
+        />
+      )}
     </div>
   );
 };

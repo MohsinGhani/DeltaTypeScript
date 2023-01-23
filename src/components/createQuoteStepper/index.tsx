@@ -31,8 +31,7 @@ const steps = [
   "Bind Cover",
 ];
 
-
-function _renderStepContent(step : number) {
+function _renderStepContent(step: number) {
   switch (step) {
     case 0:
       return <ClientDetailForm />;
@@ -45,7 +44,6 @@ function _renderStepContent(step : number) {
     default:
       return <Policybound />;
   }
-  
 }
 
 const CreateQuoteForm = () => {
@@ -194,6 +192,9 @@ const CreateQuoteForm = () => {
           open={open}
           handleOpen={handleOpen}
           handleClose={handleClose}
+          title="Refer client"
+          subtitle="Provide the following information to refer to Delta underwriters"
+          isFilePick
         />
       )}
     </div>
