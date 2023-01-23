@@ -27,6 +27,7 @@ const QuotesModal = ({
   title,
   subtitle,
   isFilePick,
+  actionTitle,
 }: any) => {
   const [select, setSelect] = useState<string>();
   const [isOpen, setIsOpen] = useState(false);
@@ -52,21 +53,32 @@ const QuotesModal = ({
                     <Typography variant="h5">{subtitle}</Typography>
                   </div>
                   <div className="modal_select">
-                    <Typography variant="subtitle1">Action</Typography>
-                    <FormControl fullWidth>
-                      <InputLabel>Select action</InputLabel>
-                      <Select
-                        value={select}
-                        label="Select action"
-                        onChange={(e) => handleChange(e)}
-                      >
-                        <MenuItem value={10}>Make mid-term adjustment</MenuItem>
-                        <MenuItem value={20}>Cancel Policy</MenuItem>
-                        <MenuItem value={30}>Notify of loss</MenuItem>
-                      </Select>
-                      <br></br>
-                      {isFilePick ? <TextField type="file" /> : null}
-                    </FormControl>
+                    <Typography variant="subtitle1">
+                      {actionTitle}
+                      <FormControl fullWidth>
+                        <InputLabel>Select action</InputLabel>
+                        <Select
+                          value={select}
+                          label="Select action"
+                          onChange={(e) => handleChange(e)}
+                        >
+                          <MenuItem value={10}>
+                            Make mid-term adjustment
+                          </MenuItem>
+                          <MenuItem value={20}>Cancel Policy</MenuItem>
+                          <MenuItem value={30}>Notify of loss</MenuItem>
+                        </Select>
+                        {isFilePick ? (
+                          <>
+                            <br></br>
+                            <Typography variant="subtitle1">
+                              Attach relevant files
+                              <TextField type="file" />
+                            </Typography>
+                          </>
+                        ) : null}
+                      </FormControl>
+                    </Typography>
                   </div>
                   <div className="modal_textarea">
                     <Typography variant="subtitle1">

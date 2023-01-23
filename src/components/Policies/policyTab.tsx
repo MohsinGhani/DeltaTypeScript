@@ -67,6 +67,7 @@ const PolicyTabs = () => {
           handleClose={() => setOpen(!open)}
           title="Manage client"
           subtitle="Select an action to manage your client"
+          actionTitle="Action"
         />
       )}
     </div>

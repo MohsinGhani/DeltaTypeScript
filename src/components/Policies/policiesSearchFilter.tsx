@@ -14,7 +14,7 @@ import PoliciesTable from ".";
 const NewBusinessPolicyTab = () => {
   const [select, setSelect] = useState("");
 
-  const handleChange = (event : SelectChangeEvent<string>) => {
+  const handleChange = (event: SelectChangeEvent<string>) => {
     setSelect(event.target.value);
   };
 
