@@ -15,7 +15,19 @@ const MedicalMalpractice = () => {
       <div className="indemnityquestions_checkbox">
         <div className="indemnityquestions_checkboxHeading">
           <Typography variant="subtitle1">
-            Any there any other PI activities other than selected occupation?
+            Does the client have an existing Medical Malpractice policy in
+            place?
+          </Typography>
+          <img src={InfoIcon} alt="Info Icon" />
+        </div>
+        <FormControlLabel control={<Checkbox />} label="Yes" />
+        <FormControlLabel control={<Checkbox />} label="No" />
+      </div>
+      <div className="indemnityquestions_checkbox">
+        <div className="indemnityquestions_checkboxHeading">
+          <Typography variant="subtitle1">
+            Does the client perform any other healthcare services other than the
+            selected occupation?
           </Typography>
           <img src={InfoIcon} alt="Info Icon" />
         </div>
@@ -27,6 +39,17 @@ const MedicalMalpractice = () => {
           <Typography variant="subtitle1">
             Is the client qualified and or certified to perform the declared
             activities?
+          </Typography>
+          <img src={InfoIcon} alt="Info Icon" />
+        </div>
+        <FormControlLabel control={<Checkbox />} label="Yes" />
+        <FormControlLabel control={<Checkbox />} label="No" />
+      </div>
+      <div className="indemnityquestions_checkbox">
+        <div className="indemnityquestions_checkboxHeading">
+          <Typography variant="subtitle1">
+            Is cover required for more than 5 of the same type of healthcare
+            professionals as selected in the occupation
           </Typography>
           <img src={InfoIcon} alt="Info Icon" />
         </div>
@@ -53,7 +76,7 @@ const MedicalMalpractice = () => {
           indemnity insurance
           <br />
           <br /> I/We as the Applicant confirm all the statements above to be
-          true and accurate: Yes No
+          true and accurate
         </Typography>
         <div className="indemnityquestions_checkbox">
           <FormControlLabel control={<Checkbox />} label="Yes" />

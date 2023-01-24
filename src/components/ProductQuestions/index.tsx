@@ -17,6 +17,7 @@ import CrimeFact from "./crimeFact";
 import GeneralStatement from "./generalStatement";
 import Button from "@mui/material/Button";
 import CyberQuestions from "./cyberQuestions";
+import MedicalMalpractice from "./medicalMalpractice";
 
 const CustomizedAccordions = () => {
   const [expanded, setExpanded] = useState<string | false>("panel1");
@@ -218,6 +219,30 @@ const CustomizedAccordions = () => {
       <Accordion
         disableGutters
         expanded={expanded === "panel8"}
+        // onChange={handleChange("panel7")}
+      >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <img src={editIconGrey} alt="Edit Icon" />
+          <Typography variant="subtitle1">Medical Malpractice</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <MedicalMalpractice />
+          <div className="createQuoteStepper_buttonContainer">
+            <Button onClick={() => setExpanded("panel7")}>Back</Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => setExpanded("panel9")}
+            >
+              Next
+            </Button>
+          </div>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        disableGutters
+        expanded={expanded === "panel9"}
         // onChange={() => handleChange("panel7")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -227,7 +252,7 @@ const CustomizedAccordions = () => {
         <AccordionDetails>
           <GeneralStatement />
           <div className="createQuoteStepper_buttonContainer">
-            <Button onClick={() => setExpanded("panel7")}>Back</Button>
+            <Button onClick={() => setExpanded("panel8")}>Back</Button>
             <Button variant="contained" color="primary">
               Next
             </Button>
