@@ -15,7 +15,7 @@ import { SelectChangeEvent } from "@mui/material/Select";
 const NewBusinessQuoteTab = () => {
   const [select, setSelect] = useState("");
 
-  const handleChange = (event : SelectChangeEvent<string>) => {
+  const handleChange = (event: SelectChangeEvent<string>) => {
     setSelect(event.target.value);
   };
 
@@ -36,7 +36,7 @@ const NewBusinessQuoteTab = () => {
         </div>
         <div className="newBusiness_selectBox">
           <FormControl>
-            <InputLabel>Sort By: </InputLabel>
+            <InputLabel>Sort by: </InputLabel>
             <Select value={select} onChange={handleChange}>
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>

@@ -36,7 +36,7 @@ const LoginPage = () => {
       await dispatch(
         loginApi({ username: values.email, password: values.password })
       );
-      navigate("/home");
+      // navigate("/home");
     },
   });
   console.log(formik);
@@ -62,7 +62,10 @@ const LoginPage = () => {
                   </Typography>
                 </div>
                 <form
-                  onSubmit={formik.handleSubmit}
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    formik.handleSubmit();
+                  }}
                   // variant="standard"
                   className="loginPage_loginInput"
                 >

@@ -59,7 +59,7 @@ const MenuTabs = () => {
     { label: "Resources", link: "/resources" },
   ];
 
-  const breadcrumbTabs: {[key: number]: string} = {
+  const breadcrumbTabs: { [key: number]: string } = {
     0: "Home",
     1: "Quotes",
     2: "Policies",
@@ -67,9 +67,9 @@ const MenuTabs = () => {
     4: "Resources",
   };
 
-  const breadcrumbText: {[key: number]: string} = {
+  const breadcrumbText: { [key: number]: string } = {
     0: "Welcome back, Ben",
-    1: "Your Quote",
+    1: "Your quotes",
     2: "Your Policies",
     3: "Get Started",
     4: " Resources",
@@ -79,7 +79,7 @@ const MenuTabs = () => {
     (tab) => tab.link === `/${param?.tab || ""}`
   );
 
-  const handleClick = (event : React.ChangeEvent<HTMLInputElement>) => {
+  const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
   };
 
@@ -92,20 +92,24 @@ const MenuTabs = () => {
         <Box sx={{ border: 1, borderColor: "divider" }}>
           <Tabs value={activeTab}>
             {tabs.map((tab) => (
-              <Tab disableRipple label={tab.label} onClick={() => navigation(tab.link)} />
+              <Tab
+                disableRipple
+                label={tab.label}
+                onClick={() => navigation(tab.link)}
+              />
             ))}
           </Tabs>
         </Box>
       </div>
       <div className="tab_main">
-        <div className="tab_contentContainer" >
+        <div className="tab_contentContainer">
           <Breadcrumbs>
             {activeTab !== 0 && <Link to="/home">Home</Link>}
             <Typography variant="subtitle1">
               {breadcrumbTabs[activeTab]}
             </Typography>
           </Breadcrumbs>
-          <h3>{breadcrumbText[activeTab ]}</h3>
+          <h3>{breadcrumbText[activeTab]}</h3>
           {/* <div className="tab_welcomeText">
             <p>Home</p>
             <h3>Welcome back, Ben</h3>

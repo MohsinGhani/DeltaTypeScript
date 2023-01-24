@@ -14,10 +14,9 @@ import { Obj } from "reselect/es/types";
 const NewBusiness = () => {
   const [select, setSelect] = useState("");
 
-  const handleChange = (event : React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelect(event.target.value);
-    return(event)
-
+    return event;
   };
 
   return (
@@ -37,8 +36,8 @@ const NewBusiness = () => {
         </div>
         <div className="newBusiness_selectBox">
           <FormControl>
-            <InputLabel>Sort By: </InputLabel>
-            <Select value={select} >
+            <InputLabel>Sort by: </InputLabel>
+            <Select value={select}>
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>
               <MenuItem value={30}>Thirty</MenuItem>
