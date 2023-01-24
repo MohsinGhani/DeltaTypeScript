@@ -4,7 +4,7 @@ import HomePageQuoteTab from "../Tabs/homePageQuoteTab";
 const RecentQuotes = () => {
   return (
     <div className="recentQuotes_container">
-      <p>Recent Quotes</p>
+      <p>Recent quotes</p>
       <div className="recentQuotes_tab_container">
         <HomePageQuoteTab />
       </div>

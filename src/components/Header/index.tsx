@@ -10,10 +10,10 @@ const Header = () => {
       </div>
       <div className="header_right_container">
         <div>
-          <p>Get Support</p>
+          <p>Get support</p>
         </div>
         <div>
-          <p>Log Out</p>
+          <p>Log out</p>
         </div>
       </div>
     </div>

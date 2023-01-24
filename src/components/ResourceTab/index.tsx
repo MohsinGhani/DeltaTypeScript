@@ -21,7 +21,7 @@ const Resources = () => {
           <Typography gutterBottom variant="subtitle1" component="div">
             Frequently asked questions
           </Typography>
-          <Button variant="contained">Get Support</Button>
+          <Button variant="contained">Get support</Button>
         </div>
 
         <Divider light />

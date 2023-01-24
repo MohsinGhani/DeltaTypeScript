@@ -55,7 +55,7 @@ const MenuTabs = () => {
     { label: "Home", link: "/home" },
     { label: "Quotes", link: "/quotes" },
     { label: "Policies", link: "/policies" },
-    { label: "Create Quote", link: "/create-quote" },
+    { label: "Create quote", link: "/create-quote" },
     { label: "Resources", link: "/resources" },
   ];
 
@@ -63,7 +63,7 @@ const MenuTabs = () => {
     0: "Home",
     1: "Quotes",
     2: "Policies",
-    3: "Create Quote",
+    3: "Create quote",
     4: "Resources",
   };
 

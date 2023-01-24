@@ -14,16 +14,12 @@ import RecentQuotes from "../RecentQuotesTable";
 import CreateQuoteForm from "../createQuoteStepper";
 
 const HomePage = () => {
-
-
-  let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    // let path = `newPath`; 
+  let navigate = useNavigate();
+  const routeChange = () => {
+    // let path = `newPath`;
     navigate("/create-quote");
-  }
-  
- 
- 
+  };
+
   return (
     <div className="homePage_container">
       <Grid container spacing={3} className="homePage_cards">
@@ -38,13 +34,9 @@ const HomePage = () => {
             <Box>
               <CardContent>
                 <Typography variant="h3">Start a new quote</Typography>
-                <Typography variant="subtitle1">
-                  Click below to get started.
-                </Typography>
-                <Button 
-onClick={routeChange}
-                variant="contained">Create Quote
-            
+
+                <Button onClick={routeChange} variant="contained">
+                  Create quote
                 </Button>
               </CardContent>
             </Box>
