@@ -22,25 +22,112 @@ import {
 } from "@mui/x-date-pickers-pro";
 import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import SearchIcon from "@mui/icons-material/Search";
-
 import InfoIcon from "../../assets/images/infoIcon.svg";
+
+import {
+  DataGrid,
+  GridColumns,
+  GridEditRowsModel,
+  GridRowsProp,
+} from "@mui/x-data-grid";
 
 const BusinessInformantion = () => {
   const [date, setDate] = useState<Date>(new Date());
   const [turnOver, setTurnOver] = useState("");
   const [Over, setOver] = useState("");
 
-  const handleClick = (event : SelectChangeEvent<string>) => {
+  const handleClick = (event: SelectChangeEvent<string>) => {
     setOver(event.target.value);
   };
 
-  const handleChange = (event  : SelectChangeEvent<string>) => {
+  const handleChange = (event: SelectChangeEvent<string>) => {
     setTurnOver(event.target.value);
   };
 
   const handleDateChange = (newValue: any) => {
     setDate(newValue);
   };
+
+  const columns: GridColumns = [
+    {
+      field: "NSW",
+      headerName: "NSW",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "QLD",
+      headerName: "QLD",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "NT",
+      headerName: "NT",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "WA",
+      headerName: "WA",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "SA",
+      headerName: "SA",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "VIC",
+      headerName: "VIC",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "ACT",
+      headerName: "ACT",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "TAS",
+      headerName: "TAS",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+  ];
+
+  const rows: GridRowsProp = [
+    {
+      id: 1,
+
+      NSW: "$ 100,000",
+      QLD: "$   0",
+      NT: "$   0",
+      WA: "$   0",
+      SA: "$   0",
+      VIC: "$   0",
+      ACT: "$ 50,000",
+      TAS: "$ 70,000",
+    },
+  ];
 
   return (
     <div className="businessInfo_container">
@@ -151,33 +238,19 @@ const BusinessInformantion = () => {
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
       </div>
+
       <div className="businessInfo_table">
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>NSW</TableCell>
-              <TableCell>QLD</TableCell>
-              <TableCell>NT</TableCell>
-              <TableCell>WA</TableCell>
-              <TableCell>SA</TableCell>
-              <TableCell>VIC</TableCell>
-              <TableCell>ACT</TableCell>
-              <TableCell>TAS</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>$ 100,000</TableCell>
-              <TableCell>$ 0</TableCell>
-              <TableCell>$ 0</TableCell>
-              <TableCell>$ 0</TableCell>
-              <TableCell>$ 0</TableCell>
-              <TableCell>$ 0</TableCell>
-              <TableCell>$50,000</TableCell>
-              <TableCell>$70,000</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        <div className="grid" style={{ height: 104 }}>
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            experimentalFeatures={{ newEditingApi: true }}
+            hideFooterPagination
+            disableColumnMenu
+            hideFooterSelectedRowCount
+            showCellRightBorder
+          />
+        </div>
         <div className="businessInfo_tablePrice">
           <Typography variant="subtitle1">$200,000</Typography>
           <Typography variant="subtitle1">Total : </Typography>

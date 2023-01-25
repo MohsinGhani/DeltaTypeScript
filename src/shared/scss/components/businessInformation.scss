@@ -181,24 +181,75 @@
     border: 1px solid #e7ebf0;
     border-radius: 3px;
     margin-top: 20px;
-    .MuiTable-root {
-      .MuiTableHead-root {
-        .MuiTableRow-root {
-          .MuiTableCell-root {
-            font-family: "Poppins", sans-serif;
-            font-weight: 700;
-            font-size: 14px;
-            color: #474848;
+
+    .grid {
+      .MuiDataGrid-root {
+        border: none;
+        height: 200px;
+        .MuiDataGrid-footerContainer {
+          border: none;
+          display: block;
+        }
+        .MuiDataGrid-main {
+          .MuiDataGrid-virtualScroller {
+            width: 800px;
+            // height: 12px;
+            // min-height: 100%;
+            // background-color: #474848;
+          }
+          .MuiDataGrid-columnHeaders {
+            min-height: 56px;
+            max-height: 6px;
+            line-height: 56px;
+            background: #f9f9f9;
+
+            .MuiDataGrid-columnHeadersInner {
+              .MuiDataGrid-columnHeader {
+                height: 56px;
+                width: 73px;
+                min-width: 57px;
+                min-width: 52px;
+                max-width: 56px;
+
+                .MuiDataGrid-columnHeaderDraggableContainer {
+                  .MuiDataGrid-columnHeaderTitleContainer {
+                    .MuiDataGrid-columnHeaderTitleContainerContent {
+                      .MuiDataGrid-columnHeaderTitle {
+                        font-family: "Poppins-Regular";
+
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 16px;
+
+                        color: #474848;
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
-      .MuiTableBody-root {
-        .MuiTableRow-root {
-          .MuiTableCell-root {
-            font-family: "Poppins", sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            color: #474848;
+      .MuiTable-root {
+        .MuiTableBody-root {
+          .MuiTableRow-root {
+            .MuiTableCell-root {
+              font-family: "Poppins", sans-serif;
+              font-weight: 500;
+              font-size: 14px;
+              color: #474848;
+            }
+          }
+        }
+        .MuiTableHead-root {
+          .MuiTableRow-root {
+            .MuiTableCell-root {
+              font-family: "Poppins", sans-serif;
+              font-weight: 700;
+              font-size: 14px;
+              color: #474848;
+            }
           }
         }
       }
@@ -218,3 +269,18 @@
     }
   }
 }
+
+.MuiDataGrid-columnSeparator {
+  visibility: "hidden" !important;
+  display: none !important;
+}
+
+// .MuiDataGrid-columnHeaderTitle {
+//   font-family: "Poppins-Regular";
+
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 16px;
+
+//   color: #474848;
+// }
