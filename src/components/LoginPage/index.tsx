@@ -36,7 +36,7 @@ const LoginPage = () => {
       await dispatch(
         loginApi({ username: values.email, password: values.password })
       );
-      // navigate("/home");
+      navigate("/home");
     },
   });
   console.log(formik);

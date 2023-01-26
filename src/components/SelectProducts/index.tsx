@@ -4,6 +4,8 @@ import { Card, CardContent, Button, Typography, Divider } from "@mui/material";
 import infoicon from "../../assets/images/infoIcon.svg";
 import editIcon from "../../assets/images/editIcon.svg";
 import products from "../../shared/json/productCards.json";
+import Management from "../../assets/images/Management Liability.jpg";
+import professional from "../../assets/images/Professional_Indemnity.png";
 
 const Products = () => {
   return (

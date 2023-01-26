@@ -3,14 +3,14 @@
     {
       "key": 0,
       "title": "Professional Indemnity",
-      "image": "../../assets/images/pro_indemnity.svg",
+      "image": "/assets/images/Management_Liability.jpg",
       "alt": "Professional Indemnity",
       "selected": false
     },
     {
       "key": 1,
       "title": "Management liability",
-      "image": "/assets/images/manage_liability.svg",
+      "image": "/assets/images/pro_indemnity.svg",
       "alt": "Management liability",
       "selected": false
     },
