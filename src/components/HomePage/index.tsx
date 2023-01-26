@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
-import ProfileImage from "../../assets/images/profileImage.png";
+import hidefdashboard from "../../assets/images/hidefdashboard.png";
 import buildingIcon from "../../assets/images/buildingIcon.svg";
 import phoneCallIcon from "../../assets/images/phoneCallIcon.svg";
 import mailIcon from "../../assets/images/mailIcon.svg";
@@ -28,7 +28,7 @@ const HomePage = () => {
             <CardMedia
               component="img"
               sx={{ width: 230 }}
-              image={ProfileImage}
+              image={hidefdashboard}
               alt="Profile Image"
             />
             <Box>
