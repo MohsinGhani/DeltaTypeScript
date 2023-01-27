@@ -27,7 +27,7 @@ const HomePage = () => {
           <Card sx={{ display: "flex" }}>
             <CardMedia
               component="img"
-              sx={{ width: 230 }}
+              sx={{ width: 250 }}
               image={hidefdashboard}
               alt="Profile Image"
             />

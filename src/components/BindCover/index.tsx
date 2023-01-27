@@ -24,21 +24,22 @@ import Download from "../../assets/images/download.svg";
 import EditIcon from "../../assets/images/editIcon.svg";
 import InfoIcon from "../../assets/images/infoIcon.svg";
 import { jsx } from "@emotion/react";
-type TableProps ={
+type TableProps = {
   // name?: string;
   //   age?: number;
-    
-  onSelectAllClick?:((event: React.ChangeEvent<HTMLInputElement>,  checked: boolean
-  )=>void) | undefined
-  handleChange?: (event: React.ChangeEvent<HTMLInputElement>)=> void
-  handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>)=> void
 
-  numSelected: number
-  rowCount: number
-}
+  onSelectAllClick?:
+    | ((event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void)
+    | undefined;
+  handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleInputChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  numSelected: number;
+  rowCount: number;
+};
 function EnhancedTableHead(props: TableProps): JSX.Element {
   const { onSelectAllClick, numSelected, rowCount } = props;
- 
+
   return (
     <TableHead>
       <TableRow>
@@ -64,11 +65,11 @@ const BindCover = () => {
   const [value, setValue] = useState<number>(30);
   const [selected, setSelected] = useState<string[]>([]);
 
-  const handleChange = ( event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAge(+event.target.value);
   };
 
-  const handleSliderChange = (event: Event , newValue:number ) => {
+  const handleSliderChange = (event: Event, newValue: number) => {
     setValue(newValue);
   };
 
@@ -84,14 +85,12 @@ const BindCover = () => {
     }
   };
 
-  const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement> ) => {
+  const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       return;
     }
     setSelected([]);
   };
-
-
 
   return (
     <div className="bindCover_container">
@@ -136,14 +135,11 @@ const BindCover = () => {
                     numSelected={9}
                     rowCount={1}
                     key={1}
-                    handleChange={(() => {})}
+                    handleChange={() => {}}
                     onSelectAllClick={handleSelectAllClick}
                   />
                   <TableBody>
-                    <TableRow
-                      hover
-                      role="checkbox"
-                    >
+                    <TableRow hover role="checkbox">
                       <TableCell padding="checkbox">
                         <Checkbox color="primary" />
                       </TableCell>
@@ -164,7 +160,7 @@ const BindCover = () => {
                         </Select>
                       </TableCell>
                       <TableCell>
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -179,10 +175,7 @@ const BindCover = () => {
                         $84.33
                       </TableCell>
                     </TableRow>
-                    <TableRow
-                      hover
-                    >
-
+                    <TableRow hover>
                       <TableCell padding="checkbox">
                         <Checkbox color="primary" />
                       </TableCell>
@@ -191,7 +184,7 @@ const BindCover = () => {
                       </TableCell>
                       <TableCell>
                         {" "}
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -204,7 +197,7 @@ const BindCover = () => {
                       </TableCell>
                       <TableCell>
                         {" "}
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -219,10 +212,7 @@ const BindCover = () => {
                         $84.33
                       </TableCell>
                     </TableRow>
-                    <TableRow
-                      hover
-                
-                    >
+                    <TableRow hover>
                       <TableCell padding="checkbox">
                         <Checkbox color="primary" />
                       </TableCell>
@@ -231,7 +221,7 @@ const BindCover = () => {
                       </TableCell>
                       <TableCell>
                         {" "}
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -244,7 +234,7 @@ const BindCover = () => {
                       </TableCell>
                       <TableCell>
                         {" "}
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -259,10 +249,7 @@ const BindCover = () => {
                         $84.33
                       </TableCell>
                     </TableRow>
-                    <TableRow
-                      hover
-                
-                    >
+                    <TableRow hover>
                       <TableCell padding="checkbox">
                         <Checkbox color="primary" inputProps={{}} />
                       </TableCell>
@@ -271,7 +258,7 @@ const BindCover = () => {
                       </TableCell>
                       <TableCell>
                         {" "}
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -284,7 +271,7 @@ const BindCover = () => {
                       </TableCell>
                       <TableCell>
                         {" "}
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -299,10 +286,7 @@ const BindCover = () => {
                         $84.33
                       </TableCell>
                     </TableRow>
-                    <TableRow
-                      hover
-                
-                    >
+                    <TableRow hover>
                       <TableCell padding="checkbox">
                         <Checkbox color="primary" inputProps={{}} />
                       </TableCell>
@@ -310,7 +294,7 @@ const BindCover = () => {
                         Crime Liability
                       </TableCell>
                       <TableCell>
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -322,7 +306,7 @@ const BindCover = () => {
                         </Select>
                       </TableCell>
                       <TableCell>
-                        <Select value={age} label="Age" >
+                        <Select value={age} label="Age">
                           <MenuItem value="">
                             <em>None</em>
                           </MenuItem>
@@ -456,10 +440,7 @@ const BindCover = () => {
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                      <TableRow
-                        hover
-                     
-                      >
+                      <TableRow hover>
                         <TableCell padding="checkbox">
                           <Checkbox color="primary" />
                         </TableCell>
@@ -472,10 +453,7 @@ const BindCover = () => {
                           </div>
                         </TableCell>
                       </TableRow>
-                      <TableRow
-                        hover
-                  
-                      >
+                      <TableRow hover>
                         <TableCell padding="checkbox">
                           <Checkbox color="primary" />
                         </TableCell>

@@ -23,6 +23,7 @@ import peopleIcon from "../../assets/images/people.svg";
 import dollarbagIcon from "../../assets/images/dollarbag.svg";
 import QuotesModal from "../Modal";
 import Policybound from "../PolicyBound";
+import BindModal from "../bindCovermodal/modal";
 
 const steps = [
   "Client details",
@@ -48,6 +49,7 @@ function _renderStepContent(step: number) {
 
 const CreateQuoteForm = () => {
   const [open, setOpen] = useState(false);
+  const [bindOpen, setBindOpen] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const isLastStep = activeStep === steps.length - 1;
 
@@ -62,6 +64,10 @@ const CreateQuoteForm = () => {
   const handleOpen = () => setOpen(true);
 
   const handleClose = () => setOpen(false);
+
+  const handleBindOpen = () => setBindOpen(true);
+
+  const handleBindClose = () => setBindOpen(false);
 
   return (
     <div className="createQuoteStepper_container">
@@ -109,7 +115,9 @@ const CreateQuoteForm = () => {
                       <Button
                         variant="contained"
                         color="primary"
-                        onClick={handleNext}
+                        onClick={
+                          isLastStep ? () => setBindOpen(true) : handleNext
+                        }
                       >
                         {isLastStep ? "Bind Cover" : "Next"}
                       </Button>
@@ -187,6 +195,18 @@ const CreateQuoteForm = () => {
           </div>
         )}
       </div>
+      {bindOpen && (
+        <BindModal
+          open={bindOpen}
+          handleOpen={handleBindOpen}
+          handleClose={handleBindClose}
+          title="Refer client"
+          subtitle="Provide the following information to refer to Delta underwriters"
+          isFilePick
+          actionTitle="additional Reasons"
+          onBind={handleNext}
+        />
+      )}
       {open && (
         <QuotesModal
           open={open}
