@@ -1,6 +1,307 @@
 .bindCover_container {
+  .bindCover_child {
+    margin-left: 15px;
+    margin-right: 15px;
+
+    .businessInfo_header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+      margin-top: 15px;
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: #474848;
+      }
+      img {
+        padding-left: 5px;
+        height: 16px;
+      }
+    }
+    .businessInfo_addressSearch {
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: #474848;
+      }
+      .MuiInputBase-root {
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 0;
+        border-radius: 5px;
+        background-color: #f6f6f6;
+      }
+    }
+    .MuiTypography-body2 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      color: #a7a5a5;
+      padding: 5px 25px;
+    }
+    .businessInfo_locationsAndDate {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      .businessInfo_locationNumberContainer {
+        width: 48%;
+        .businessInfo_locationNumber {
+          display: flex;
+          align-items: center;
+          .MuiTypography-subtitle1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #474848;
+          }
+          img {
+            padding-left: 5px;
+          }
+        }
+        .businessInfo_locationSelect {
+          margin-top: 10px;
+          .MuiInputBase-root {
+            width: 100%;
+            background-color: #f6f6f6;
+          }
+        }
+      }
+      .businessInfo_policyPeriodContainer {
+        width: 48%;
+        .businessInfo_policyPeriod {
+          display: flex;
+          align-items: center;
+          .MuiTypography-subtitle1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #474848;
+          }
+          img {
+            padding-left: 5px;
+          }
+        }
+        .businessInfo_policyDateContainer {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 10px;
+
+          .MuiFormControl-root {
+            width: 100%;
+            background-color: #f6f6f6;
+            .MuiInputBase-root {
+              width: 100%;
+              padding-right: 5px;
+            }
+          }
+          .MuiTypography-subtitle1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #474848;
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+    .businessInfo_detailHeader {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: #474848;
+      }
+      img {
+        padding-left: 5px;
+        height: 16px;
+      }
+    }
+    .businessInfo_checkbox {
+      margin-top: 20px;
+      .MuiFormControlLabel-root {
+        margin-right: 50px;
+        .MuiButtonBase-root {
+          padding: 8px;
+        }
+        .MuiTypography-root {
+          font-family: "Poppins", sans-serif;
+          font-weight: 400;
+          font-size: 15px;
+          color: #474848;
+        }
+      }
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: #474848;
+      }
+    }
+    .businessInfo_stampMeasure {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      .MuiTypography-subtitle1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        color: #474848;
+      }
+      img {
+        padding-left: 5px;
+      }
+    }
+    .businessInfo_stampMeasureSelect {
+      width: 200px;
+      .MuiSelect-select {
+        font-family: "Poppins-Regular";
+        font-weight: 700;
+      }
+      .MuiInputBase-root {
+        width: 100%;
+        background-color: #f6f6f6;
+
+        .MuiInputBase-input {
+          font: inherit;
+          letter-spacing: inherit;
+          color: currentColor;
+          padding: 4px 0 5px;
+          border: 0;
+          box-sizing: content-box;
+          background: none;
+          height: 1.4375em;
+          margin: -6px;
+          -webkit-tap-highlight-color: transparent;
+          display: block;
+          min-width: 0;
+          width: 100%;
+          -webkit-animation-name: mui-auto-fill-cancel;
+          animation-name: mui-auto-fill-cancel;
+          -webkit-animation-duration: 10ms;
+          animation-duration: 10ms;
+          padding: 16.5px 14px;
+          padding-right: 0;
+        }
+      }
+    }
+
+    .businessInfo_details {
+      margin-top: 25px;
+      .MuiTypography-subtitle {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #474848;
+      }
+
+      img {
+        height: 16px;
+        margin-top: 10px;
+      }
+    }
+    .businessInfo_table {
+      border: 1px solid #e7ebf0;
+      border-radius: 3px;
+      margin-top: 20px;
+
+      .grid {
+        .MuiDataGrid-root {
+          border: none;
+          height: 200px;
+          .MuiDataGrid-footerContainer {
+            border: none;
+            display: block;
+          }
+          .MuiDataGrid-main {
+            .MuiDataGrid-virtualScroller {
+              width: 800px;
+              // height: 12px;
+              // min-height: 100%;
+              // background-color: #474848;
+            }
+            .MuiDataGrid-columnHeaders {
+              min-height: 56px;
+              max-height: 6px;
+              line-height: 56px;
+              background: #f9f9f9;
+
+              .MuiDataGrid-columnHeadersInner {
+                .MuiDataGrid-columnHeader {
+                  height: 56px;
+                  width: 73px;
+                  min-width: 57px;
+                  min-width: 52px;
+                  max-width: 56px;
+
+                  .MuiDataGrid-columnHeaderDraggableContainer {
+                    .MuiDataGrid-columnHeaderTitleContainer {
+                      .MuiDataGrid-columnHeaderTitleContainerContent {
+                        .MuiDataGrid-columnHeaderTitle {
+                          font-family: "Poppins-Regular";
+
+                          font-style: normal;
+                          font-weight: bold;
+                          font-size: 16px;
+
+                          color: #474848;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .MuiTable-root {
+        .MuiTableBody-root {
+          .MuiTableRow-root {
+            .MuiTableCell-root {
+              font-family: "Poppins", sans-serif;
+              font-weight: 500;
+              font-size: 14px;
+              color: #474848;
+            }
+          }
+        }
+        .MuiTableHead-root {
+          .MuiTableRow-root {
+            .MuiTableCell-root {
+              font-family: "Poppins", sans-serif;
+              font-weight: 700;
+              font-size: 14px;
+              color: #474848;
+            }
+          }
+        }
+      }
+    }
+    .businessInfo_tablePrice {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding: 25px 40px;
+      .MuiTypography-subtitle1 {
+        margin-left: 50px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: #474848;
+      }
+    }
+  }
+
   .bindCover_header {
-    padding: 20px 25px;
+    padding: 20px 10px;
     display: flex;
     align-items: center;
     .MuiTypography-subtitle1 {

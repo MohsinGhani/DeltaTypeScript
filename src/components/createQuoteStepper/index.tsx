@@ -48,6 +48,7 @@ function _renderStepContent(step: number) {
 }
 
 const CreateQuoteForm = () => {
+  window.scrollTo(150, 150);
   const [open, setOpen] = useState(false);
   const [bindOpen, setBindOpen] = useState(false);
   const [activeStep, setActiveStep] = useState(0);

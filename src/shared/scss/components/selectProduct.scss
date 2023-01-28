@@ -32,9 +32,11 @@
     display: flex;
     gap: 30px;
     .MuiPaper-root {
+      border: none;
       width: 225px;
       border-radius: 6px;
       .MuiCardContent-root {
+        border: none;
         padding: 0px;
         .productCard_imageAndButton {
           display: flex;
@@ -107,6 +109,7 @@
       border-radius: 6px;
       .MuiCardContent-root {
         padding: 0px;
+        border: none;
         .moreProductCard_imageAndButton {
           display: flex;
           justify-content: space-between;
@@ -145,6 +148,7 @@
           // margin-top: 15px;
           margin-bottom: 10px;
           margin-left: 20px;
+          color: white;
           .MuiTypography-root {
             font-family: "Poppins", sans-serif;
             font-weight: 400;

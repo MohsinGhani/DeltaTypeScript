@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, Button, Typography, Divider } from "@mui/material";
 
 import infoicon from "../../assets/images/infoIcon.svg";
@@ -22,6 +22,14 @@ enum ImageUrl {
 }
 
 const Products = () => {
+  const [select, setSelect] = useState<number>(0);
+  const [buttonText, setButtonText] = useState("select");
+  const [secondbuttonText, secondButtonText] = useState("select");
+  const [buttonColor, setButtonColor] = useState("white");
+  const [iconOneColor, setIconOneColor] = useState("white");
+  const [oneButtonColor, setOneButtonColor] = useState("black");
+  const [moreProducts, setMoreProducts] = useState<number>(0);
+
   const mapTitleToImage = (imageUrl: string): string => {
     switch (imageUrl) {
       case ImageUrl.Management:
@@ -46,6 +54,7 @@ const Products = () => {
         return ManagementImage;
     }
   };
+
   return (
     <div className="products_container">
       <div className="products_header">
@@ -61,61 +70,33 @@ const Products = () => {
       </div>
 
       <div className="productCard_container">
-        {/* <Card>
-          <CardContent>
-            <div className="moreProductCard_imageAndButton">
-              <img src={Management} alt="" />
-              <Button variant="outlined">Select</Button>
-            </div>
-            <div className="moreProductCard_info">
-              <Typography variant="h4">
-                Professional Indemnity <img src={infoicon} alt="info details" />
-              </Typography>
-            </div>
-            <div className="moreProductCard_bottom">
-              <Typography>Click to add this product.</Typography>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent>
-            <div className="moreProductCard_imageAndButton">
-              <img src={Management} alt="" />
-              <Button variant="outlined">Select</Button>
-            </div>
-            <div className="moreProductCard_info">
-              <Typography variant="h4">
-                Management liability <img src={infoicon} alt="info details" />
-              </Typography>
-            </div>
-            <div className="moreProductCard_bottom">
-              <Typography>Click to add this product.</Typography>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent>
-            <div className="moreProductCard_imageAndButton">
-              <img src={cyber} />
-              <Button variant="outlined">Select</Button>
-            </div>
-            <div className="moreProductCard_info">
-              <Typography variant="h4">
-                Cyber Liability <img src={infoicon} alt="info details" />
-              </Typography>
-            </div>
-            <div className="moreProductCard_bottom">
-              <Typography>Click to add this product.</Typography>
-            </div>
-          </CardContent>
-        </Card> */}
         {products.products?.map((product) => {
           return (
-            <Card>
+            <Card
+              style={{
+                backgroundColor:
+                  product.key === select ? "rgba(111, 183, 87, 0.08" : "white",
+                // color: product.key === moreProducts ? "white" : "#474848",
+              }}
+            >
               <CardContent key={product.key}>
                 <div className="productCard_imageAndButton">
                   <img src={mapTitleToImage(product.title)} alt={product.alt} />
-                  <Button variant="outlined">Select</Button>
+                  <Button
+                    style={{
+                      backgroundColor:
+                        product.key === select ? "#474848" : "white",
+                      color: product.key === select ? "white" : "#474848",
+                    }}
+                    variant="outlined"
+                    type="submit"
+                    onClick={() => {
+                      setSelect(product.key);
+                      secondButtonText("Selected ✔");
+                    }}
+                  >
+                    {product.key === select ? "Selected ✔" : "select"}
+                  </Button>
                 </div>
                 <div className="productCard_info">
                   <Typography variant="h4">
@@ -135,78 +116,35 @@ const Products = () => {
         <img src={infoicon} alt="info details" />
       </div>
       <div className="moreProductCard_container">
-        {/* <Card>
-          <CardContent>
-            <div className="moreProductCard_imageAndButton">
-              <img src={professional} alt="" />
-              <Button variant="outlined">Select</Button>
-            </div>
-            <div className="moreProductCard_info">
-              <Typography variant="h4">
-                Professional Indemnity <img src={infoicon} alt="info details" />
-              </Typography>
-            </div>
-            <div className="moreProductCard_bottom">
-              <Typography>Click to add this product.</Typography>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent>
-            <div className="moreProductCard_imageAndButton">
-              <img src={Management} alt="" />
-              <Button variant="outlined">Select</Button>
-            </div>
-            <div className="moreProductCard_info">
-              <Typography variant="h4">
-                Management liability <img src={infoicon} alt="info details" />
-              </Typography>
-            </div>
-            <div className="moreProductCard_bottom">
-              <Typography>Click to add this product.</Typography>
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent>
-            <div className="moreProductCard_imageAndButton">
-              <img src={cyber} />
-              <Button variant="outlined">Select</Button>
-            </div>
-            <div className="moreProductCard_info">
-              <Typography variant="h4">
-                Cyber Liability <img src={infoicon} alt="info details" />
-              </Typography>
-            </div>
-            <div className="moreProductCard_bottom">
-              <Typography>Click to add this product.</Typography>
-            </div>
-          </CardContent>
-        </Card> */}
-        {/* <Card>
-          <CardContent key={product.key}>
-            <div className="moreProductCard_imageAndButton">
-              <img src={product.image} alt={product.alt} />
-              <Button variant="outlined">Select</Button>
-            </div>
-            <div className="moreProductCard_info">
-              <Typography variant="h4">
-                {product.title} <img src={infoicon} alt="info details" />
-              </Typography>
-            </div>
-            <div className="moreProductCard_bottom">
-              <Typography>Click to add this product.</Typography>
-            </div>
-          </CardContent>
-        </Card> */}
-
         {products.moreProducts?.map((product) => {
           return (
-            <Card>
+            <Card
+              style={{
+                backgroundColor:
+                  product.key === moreProducts
+                    ? "rgba(111, 183, 87, 0.08"
+                    : "white",
+                // color: product.key === moreProducts ? "white" : "#474848",
+              }}
+            >
               <CardContent key={product.key}>
                 <div className="moreProductCard_imageAndButton">
                   <img src={mapTitleToImage(product.title)} alt={product.alt} />
-                  <Button variant="outlined">Select</Button>
+                  <Button
+                    style={{
+                      backgroundColor:
+                        product.key === moreProducts ? "#474848" : "white",
+                      color: product.key === moreProducts ? "white" : "#474848",
+                    }}
+                    variant="outlined"
+                    type="submit"
+                    key={product.key}
+                    onClick={() => {
+                      setMoreProducts(product.key);
+                    }}
+                  >
+                    {product.key === moreProducts ? "Selected ✔" : "select"}
+                  </Button>
                 </div>
                 <div className="moreProductCard_info">
                   <Typography variant="h4">

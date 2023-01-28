@@ -14,95 +14,7 @@
       height: 16px;
     }
   }
-  .businessInfo_addressSearch {
-    .MuiTypography-subtitle1 {
-      font-family: "Poppins", sans-serif;
-      font-weight: 500;
-      font-size: 14px;
-      color: #474848;
-    }
-    .MuiInputBase-root {
-      width: 100%;
-      font-family: "Poppins", sans-serif;
-      letter-spacing: 0;
-      border-radius: 5px;
-      background-color: #f6f6f6;
-    }
-  }
-  .MuiTypography-body2 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    color: #a7a5a5;
-    padding: 5px 25px;
-  }
-  .businessInfo_locationsAndDate {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    .businessInfo_locationNumberContainer {
-      width: 48%;
-      .businessInfo_locationNumber {
-        display: flex;
-        align-items: center;
-        .MuiTypography-subtitle1 {
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
-          font-size: 14px;
-          color: #474848;
-        }
-        img {
-          padding-left: 5px;
-        }
-      }
-      .businessInfo_locationSelect {
-        margin-top: 10px;
-        .MuiInputBase-root {
-          width: 100%;
-          background-color: #f6f6f6;
-        }
-      }
-    }
-    .businessInfo_policyPeriodContainer {
-      width: 48%;
-      .businessInfo_policyPeriod {
-        display: flex;
-        align-items: center;
-        .MuiTypography-subtitle1 {
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
-          font-size: 14px;
-          color: #474848;
-        }
-        img {
-          padding-left: 5px;
-        }
-      }
-      .businessInfo_policyDateContainer {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 10px;
 
-        .MuiFormControl-root {
-          width: 100%;
-          background-color: #f6f6f6;
-          .MuiInputBase-root {
-            width: 100%;
-            padding-right: 5px;
-          }
-        }
-        .MuiTypography-subtitle1 {
-          font-family: "Poppins", sans-serif;
-          font-weight: 500;
-          font-size: 14px;
-          color: #474848;
-          padding: 0 5px;
-        }
-      }
-    }
-  }
   .businessInfo_detailHeader {
     display: flex;
     align-items: center;
@@ -119,7 +31,7 @@
     }
   }
   .businessInfo_checkbox {
-    margin-top: 40px;
+    margin-top: 20px;
     .MuiFormControlLabel-root {
       margin-right: 50px;
       .MuiButtonBase-root {
@@ -155,7 +67,10 @@
   }
   .businessInfo_stampMeasureSelect {
     width: 200px;
-
+    .MuiSelect-select {
+      font-family: "Poppins-Regular";
+      font-weight: 700;
+    }
     .MuiInputBase-root {
       width: 100%;
       background-color: #f6f6f6;

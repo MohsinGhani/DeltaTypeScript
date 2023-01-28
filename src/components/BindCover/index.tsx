@@ -1,29 +1,51 @@
 import React, { useState } from "react";
 import {
-  Button,
   Divider,
   Input,
-  MenuItem,
   Slider,
-  TableBody,
-  TableCell,
-  TableRow,
-  Typography,
-  TableHead,
-  Table,
   Paper,
-  Select,
   TableContainer,
   TableFooter,
-  Checkbox,
   Card,
   CardContent,
 } from "@mui/material";
 
 import Download from "../../assets/images/download.svg";
 import EditIcon from "../../assets/images/editIcon.svg";
-import InfoIcon from "../../assets/images/infoIcon.svg";
+// import InfoIcon from "../../assets/images/infoIcon.svg";
 import { jsx } from "@emotion/react";
+import {
+  Typography,
+  Select,
+  MenuItem,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  InputAdornment,
+  OutlinedInput,
+  SelectChangeEvent,
+  Button,
+} from "@mui/material";
+import {
+  DesktopDatePicker,
+  LocalizationProvider,
+} from "@mui/x-date-pickers-pro";
+import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
+import SearchIcon from "@mui/icons-material/Search";
+import InfoIcon from "../../assets/images/infoIcon.svg";
+
+import {
+  DataGrid,
+  GridColumns,
+  GridEditRowsModel,
+  GridRowsProp,
+} from "@mui/x-data-grid";
+
 type TableProps = {
   // name?: string;
   //   age?: number;
@@ -61,13 +83,16 @@ function EnhancedTableHead(props: TableProps): JSX.Element {
 }
 
 const BindCover = () => {
+  const [date, setDate] = useState<Date>(new Date());
+  const [turnOver, setTurnOver] = useState("");
+  const [Over, setOver] = useState("");
   const [age, setAge] = useState<number>();
   const [value, setValue] = useState<number>(30);
   const [selected, setSelected] = useState<string[]>([]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAge(+event.target.value);
-  };
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setAge(+event.target.value);
+  // };
 
   const handleSliderChange = (event: Event, newValue: number) => {
     setValue(newValue);
@@ -91,14 +116,204 @@ const BindCover = () => {
     }
     setSelected([]);
   };
+  const handleClick = (event: SelectChangeEvent<string>) => {
+    setOver(event.target.value);
+  };
+
+  const handleChange = (event: SelectChangeEvent<string>) => {
+    setTurnOver(event.target.value);
+  };
+
+  const handleDateChange = (newValue: any) => {
+    setDate(newValue);
+  };
+
+  const columns: GridColumns = [
+    {
+      field: "NSW",
+      headerName: "NSW",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "QLD",
+      headerName: "QLD",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "NT",
+      headerName: "NT",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "WA",
+      headerName: "WA",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "SA",
+      headerName: "SA",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "VIC",
+      headerName: "VIC",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "ACT",
+      headerName: "ACT",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "TAS",
+      headerName: "TAS",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+  ];
+
+  const rows: GridRowsProp = [
+    {
+      id: 1,
+
+      NSW: "$ 100,000",
+      QLD: "$   0",
+      NT: "$   0",
+      WA: "$   0",
+      SA: "$   0",
+      VIC: "$   0",
+      ACT: "$ 50,000",
+      TAS: "$ 70,000",
+    },
+  ];
 
   return (
     <div className="bindCover_container">
-      <div className="bindCover_header">
-        <img src={EditIcon} alt="Edit Icon" />
-        <Typography variant="subtitle1">Coverage Summary</Typography>
+      <div className="bindCover_child">
+        <div className="bindCover_header">
+          <img src={EditIcon} alt="Edit Icon" />
+          <Typography variant="subtitle1">Coverage Summary</Typography>
+        </div>
+        <Divider light />
+        <div className="businessInfo_header">
+          <Typography variant="subtitle1">
+            What is your clients insured address
+          </Typography>
+          <img src={InfoIcon} alt="Info Icon" />
+        </div>
+        <div className="businessInfo_addressSearch">
+          <Typography variant="subtitle1">Address</Typography>
+          <OutlinedInput
+            type="text"
+            placeholder="Type address here"
+            startAdornment={
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            }
+          />
+        </div>
+        <Typography variant="body2">
+          You can also choose to type free text
+        </Typography>
+        <div className="businessInfo_locationsAndDate">
+          <div className="businessInfo_policyPeriodContainer">
+            <div className="businessInfo_policyPeriod">
+              <Typography variant="subtitle1">Policy Period</Typography>
+              <img src={InfoIcon} alt="Edit icon" />
+            </div>
+            <div className="businessInfo_policyDateContainer">
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DesktopDatePicker
+                  minDate={new Date()}
+                  label="Start Date"
+                  inputFormat="MM/DD/YYYY"
+                  value={date}
+                  onChange={handleDateChange}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+                <Typography variant="subtitle1">to</Typography>
+                <DesktopDatePicker
+                  label="End Date"
+                  inputFormat="MM/DD/YYYY"
+                  value={date}
+                  onChange={handleDateChange}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </LocalizationProvider>
+            </div>
+          </div>
+        </div>
+        <div className="businessInfo_checkbox">
+          <Typography variant="subtitle1">
+            Do you have any overseas locations?
+          </Typography>
+          <FormControlLabel control={<Checkbox />} label="Yes" />
+          <FormControlLabel control={<Checkbox />} label="No" />
+        </div>
+
+        <div className="businessInfo_header">
+          <Typography variant="subtitle1">
+            Please provide details on the insured's revenue distribution in
+            Australia and/or abroad
+          </Typography>
+        </div>
+        <div className="businessInfo_stampMeasureSelect">
+          <Select value={Over} onChange={handleClick}>
+            {/* <MenuItem value="">
+            <em>None</em>
+          </MenuItem> */}
+            {/* <MenuItem value={10}>in $ AUD</MenuItem> */}
+            <MenuItem value={10}>in $ QLD</MenuItem>
+            <MenuItem value={20}>in $ NSW</MenuItem>
+            <MenuItem value={30}>in $ NT</MenuItem>
+            <MenuItem value={40}>in $ WA</MenuItem>
+            <MenuItem value={50}>in $ SA</MenuItem>
+            <MenuItem value={60}>in $ VIC</MenuItem>
+            <MenuItem value={70}>in $ ACT</MenuItem>
+          </Select>
+        </div>
+
+        <div className="businessInfo_table">
+          <div className="grid" style={{ height: 104 }}>
+            <DataGrid
+              rows={rows}
+              columns={columns}
+              experimentalFeatures={{ newEditingApi: true }}
+              hideFooterPagination
+              disableColumnMenu
+              hideFooterSelectedRowCount
+              showCellRightBorder
+            />
+          </div>
+          <div className="businessInfo_tablePrice">
+            <Typography variant="subtitle1">$200,000</Typography>
+            <Typography variant="subtitle1">Total : </Typography>
+          </div>
+        </div>
       </div>
-      <Divider light />
       <Card>
         <CardContent>
           <div className="bindCover_quote">

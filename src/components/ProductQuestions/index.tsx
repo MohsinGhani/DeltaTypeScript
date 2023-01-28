@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import editIconGrey from "../../assets/images/editIconGrey.svg";
+import editIcon from "../../assets/images/editIcon.svg";
 import BusinessInformantion from "./businessInformation";
 import IndemnityQuestions from "./indemnityQuestions";
 import DirectorQuestion from "./directorQuestions";
@@ -46,7 +46,7 @@ const CustomizedAccordions = () => {
         // onChange={handleChange("panel1")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">
             General Business Information
           </Typography>
@@ -72,7 +72,7 @@ const CustomizedAccordions = () => {
         // onChange={handleChange("panel2")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">
             Professional Indemnity questions
           </Typography>
@@ -99,7 +99,7 @@ const CustomizedAccordions = () => {
         // onChange={handleChange("panel3")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">
             Directors and Officers Liability Questions
           </Typography>
@@ -125,7 +125,7 @@ const CustomizedAccordions = () => {
         // onChange={() => handleChange("panel4")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">
             Employer’s Liability Questions
           </Typography>
@@ -150,7 +150,7 @@ const CustomizedAccordions = () => {
         // onChange={() => handleChange("panel5")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">
             Statutory Liability Questions
           </Typography>
@@ -175,7 +175,7 @@ const CustomizedAccordions = () => {
         // onChange={() => handleChange("panel6")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">Crime Liability Questions</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -199,7 +199,7 @@ const CustomizedAccordions = () => {
         // onChange={handleChange("panel7")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">Cyber Questions</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -223,7 +223,7 @@ const CustomizedAccordions = () => {
         // onChange={handleChange("panel7")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">Medical Malpractice</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -247,7 +247,7 @@ const CustomizedAccordions = () => {
         // onChange={handleChange("panel7")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">Genral Liability</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -271,7 +271,7 @@ const CustomizedAccordions = () => {
         // onChange={() => handleChange("panel7")}
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <img src={editIconGrey} alt="Edit Icon" />
+          <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">General Statement Of Fact</Typography>
         </AccordionSummary>
         <AccordionDetails>
