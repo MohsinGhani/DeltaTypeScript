@@ -82,7 +82,7 @@ function EnhancedTableHead(props: TableProps): JSX.Element {
   );
 }
 
-const BindCover = () => {
+const BindCover = ({ formField }: any) => {
   const [date, setDate] = useState<Date>(new Date());
   const [turnOver, setTurnOver] = useState("");
   const [Over, setOver] = useState("");

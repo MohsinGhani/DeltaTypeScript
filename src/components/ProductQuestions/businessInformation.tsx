@@ -11,7 +11,7 @@ import {
   SelectChangeEvent,
   Button,
 } from "@mui/material";
-import editIcon from "../../assets/images/editIcon.svg";
+
 import {
   DesktopDatePicker,
   LocalizationProvider,

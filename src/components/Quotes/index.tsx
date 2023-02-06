@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -14,6 +14,9 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
 import TableHead from "@mui/material/TableHead";
+import { getQuotes } from "./quotesTabSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../store";
 import { TablePaginationActionsProps } from "@mui/material/TablePagination/TablePaginationActions";
 
 function TablePaginationActions(props: TablePaginationActionsProps) {
@@ -231,8 +234,30 @@ const rows = [
 ];
 
 export default function QuoteTable() {
+  const quotes = useSelector((state: any) => state?.quotes?.quotes);
+
+  const ro = quotes.map((it: any) => ({
+    insuredName: it?.quoteClient?.clientEntityName,
+    inceptionDate: "--",
+    lastModified: "--",
+    product: `${it?.quotePackages?.map((quotePackage: any) =>
+      quotePackage?.quoteProducts?.map((quoteProduct: any) =>
+        quoteProduct.quoteProductSections.map(
+          (quoteProductSection: any) => quoteProductSection?.productSectionName
+        )
+      )
+    )}`,
+    status: "--",
+  }));
+
+  console.log("🚀 ~ file: index.tsx:238 ~ QuoteTable ~ state", quotes);
+  const dispatch = useDispatch<AppDispatch>();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  useEffect(() => {
+    dispatch(getQuotes());
+  }, []);
 
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
@@ -261,9 +286,9 @@ export default function QuoteTable() {
           </TableHead>
           <TableBody>
             {(rowsPerPage > 0
-              ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              : rows
-            ).map((row) => (
+              ? ro.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              : ro
+            ).map((row: any) => (
               <TableRow key={row.insuredName}>
                 <TableCell component="th" scope="row">
                   {row.insuredName}
@@ -287,7 +312,7 @@ export default function QuoteTable() {
             <TableRow>
               <TablePagination
                 rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-                count={rows.length}
+                count={ro.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 SelectProps={{

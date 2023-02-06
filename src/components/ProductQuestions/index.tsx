@@ -20,7 +20,7 @@ import CyberQuestions from "./cyberQuestions";
 import MedicalMalpractice from "./medicalMalpractice";
 import GenralLiability from "./genralLiability";
 
-const CustomizedAccordions = () => {
+const CustomizedAccordions = ({ formField }: any) => {
   const [expanded, setExpanded] = useState<string | false>("panel1");
 
   console.log(
@@ -40,11 +40,7 @@ const CustomizedAccordions = () => {
 
   return (
     <div className="customizedaccordions_container">
-      <Accordion
-        disableGutters
-        expanded={expanded === "panel1"}
-        // onChange={handleChange("panel1")}
-      >
+      <Accordion disableGutters expanded={expanded === "panel1"}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">

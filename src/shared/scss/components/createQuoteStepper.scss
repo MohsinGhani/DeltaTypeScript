@@ -57,11 +57,19 @@
     .createQuoteStepper_withCard {
       .MuiGrid-root {
         // display: flex;
+        // display: flex;
         justify-content: space-between;
+        position: -webkit-sticky;
+        position: sticky;
+
         .createQuoteStepper_leftCard {
           .MuiPaper-root {
             border: 1px solid #e7ebf0;
             box-shadow: none;
+            position: -webkit-sticky;
+            position: sticky;
+            // top: 50px;
+
             .createQuoteStepper_buttonContainer {
               display: flex;
               justify-content: space-between;
@@ -89,6 +97,14 @@
           }
         }
         .createQuoteStepper_rightCard {
+          // position: fixed;
+          // display: flex;
+          justify-content: revert;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 200px;
+          // margin-top: 20px;
+
           .createQuoteStepper_cardHeader {
             display: flex;
             justify-content: space-between;
