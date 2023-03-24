@@ -36,7 +36,7 @@ const NewBusinessQuoteTab = () => {
         </div>
         <div className="newBusiness_selectBox">
           <FormControl>
-            <InputLabel>Sort by: </InputLabel>
+            <InputLabel>Sort by </InputLabel>
             <Select value={select} onChange={handleChange}>
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>

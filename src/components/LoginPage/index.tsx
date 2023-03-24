@@ -16,9 +16,11 @@ import CardTitleLogo from "../../assets/images/cardTitleLogo.svg";
 import Header from "../Header";
 import { useDispatch } from "react-redux";
 import { loginApi } from "./loginPageSlice";
+import { broker } from "../../services/broker";
 import { AppDispatch } from "../../store";
+
 export const validationSchema = Yup.object({
-  email: Yup.string().email().required("please enter your   email"),
+  email: Yup.string().email().required("please enter your email"),
   password: Yup.string().min(4).max(25).required("please enter your password"),
 });
 
@@ -32,14 +34,16 @@ const LoginPage = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
-      console.log("values", values);
-      await dispatch(
+      let response = await dispatch(
         loginApi({ username: values.email, password: values.password })
       );
-      navigate("/home");
+      if (response.payload.token) {
+        await broker(values.email);
+        navigate("/home");
+      }
     },
   });
-  console.log(formik);
+  // console.log(formik);
   return (
     <div>
       <Header />

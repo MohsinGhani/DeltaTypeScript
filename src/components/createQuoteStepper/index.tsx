@@ -145,7 +145,13 @@ const CreateQuoteForm = () => {
                             color="primary"
                             onClick={options["handleSubmit"]}
                           >
-                            {isLastStep ? "Bind Cover" : "Next"}
+                            {activeStep == 0
+                              ? "update end next"
+                              : isLastStep
+                              ? "Bind Cover"
+                              : "Next"}
+
+                            {/* {isLastStep ? "Bind Cover" : "Next"} */}
                           </Button>
                         </div>
                       </Card>

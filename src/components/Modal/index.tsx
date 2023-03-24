@@ -22,7 +22,6 @@ import InfoIcon from "../../assets/images/infoIcon.svg";
 
 const QuotesModal = ({
   open,
-  handleOpen,
   handleClose,
   title,
   subtitle,
@@ -35,6 +34,29 @@ const QuotesModal = ({
   const handleChange = (event: SelectChangeEvent<string>) => {
     setSelect(event.target.value);
   };
+  // const getOccupationNames = async (businessNumber: string): Promise<any> => {
+  //   try {
+  //     const token = Cookies.get("token");
+
+  //     const data = await axios({
+  //       method: "post",
+  //       url: "https://u090h4woii.execute-api.ap-southeast-2.amazonaws.com/delta-microservices/email-send-email ",
+  //       data: JSON.stringify(businessNumber),
+  //       // data: JSON.stringify(`95904322581`),
+
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+
+  //     setOccupationNames(data.data);
+
+  //     console.log("MAI OCCUPATIONS HUN", data.data);
+  //   } catch (error: any) {
+  //     console.log("MAIN VILLAN HOUN", error, "hwerh", businessNumber);
+  //   }
+  // };
 
   return (
     <div>

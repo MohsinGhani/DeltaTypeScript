@@ -1,125 +1,88 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import CardContent from "@mui/material/CardContent";
 import InfoIcon from "../../assets/images/infoIcon.svg";
 import Typography from "@mui/material/Typography";
 import Checkbox from "@mui/material/Checkbox";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import EditIcon from "../../assets/images/editIcon.svg";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
 import Cookies from "js-cookie";
-import { FormControl, FormControlLabel, InputLabel } from "@mui/material";
+import { FormControl, InputLabel } from "@mui/material";
 import axios from "axios";
 
 const ClientDetailForm = ({ values, errors, handleChange }: any) => {
-  const [turnOver, setTurnOver] = useState<string>("");
-  const [number, setNumber] = useState<string>();
   const [clientsNames, setClientsName] = React.useState<any>([]);
+  const [businessNumber, setBusinessNumber] = React.useState<string | null>(
+    null
+  );
   const [occupationNames, setOccupationNames] = React.useState<any>([]);
-
-  const handleOnChange = (event: SelectChangeEvent<string>) => {
-    setTurnOver(event.target.value);
-  };
-
-  const handleClick = (event: SelectChangeEvent<string>) => {
-    setNumber(event.target.value);
-  };
+  useEffect(() => {
+    if (businessNumber) {
+      getOccupationNames(businessNumber);
+    }
+  }, [businessNumber]);
 
   const getabnNumber = async (event: any) => {
     try {
       const token = Cookies.get("token");
 
-      const data = await axios({
-        method: "post",
-        url: "https://u090h4woii.execute-api.ap-southeast-2.amazonaws.com/delta-microservices/delta-microservices-client-get-abn-clients-by-name",
-        data: { clientName: event?.target?.value },
-        headers: { Authorization: `Bearer ${token}` },
-      });
-
-      console.log(data);
-    } catch (error: any) {
-      const staticData = {
-        abnClientsList: [
-          {
-            businessNumber: "81061021814",
-            isCurrentName: "Y",
-            organizationName: "DELTA INSURANCE AGENCY PTY LTD",
-            isCurrentAddress: "Y",
-            postcode: "3152",
-            stateCode: "VIC",
-            searchRelevance: "100",
-            fullName: null,
-            givenName: null,
-            otherGivenName: null,
-            familyName: null,
-            tradingName: null,
-            businessName: null,
+      const data = await axios.post(
+        "https://u090h4woii.execute-api.ap-southeast-2.amazonaws.com/delta-microservices/delta-microservices-client-get-abn-clients-by-name",
+        event?.target?.value,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
-          {
-            businessNumber: "78082286897",
-            isCurrentName: "N",
-            organizationName: "DELTA BLOODSTOCK & INSURANCE BROKERS PTY LTD",
-            isCurrentAddress: "Y",
-            postcode: "2073",
-            stateCode: "NSW",
-            searchRelevance: "97",
-            fullName: null,
-            givenName: null,
-            otherGivenName: null,
-            familyName: null,
-            tradingName: null,
-            businessName: null,
-          },
-        ],
-      };
 
-      setClientsName(
-        staticData?.abnClientsList.map((item) => ({
-          ...item,
-          value: item["businessNumber"],
-        }))
+          // Credentials: "include",
+        }
       );
 
-      console.log("MAIN VILLAN HOUN", error);
+      // const data = await axios({
+      //   method: "post",
+      //   url: "https://u090h4woii.execute-api.ap-southeast-2.amazonaws.com/delta-microservices/delta-microservices-client-get-abn-clients-by-name",
+      //   data: event?.target?.value,
+      //   headers: { Authorization: `Bearer ${token}` },
+      // });
+      let tempData = data.data.result.slice(0, 12).map((item: any) => item);
+      setClientsName(data.data.result.slice(0, 12).map((item: any) => item));
+      // let tempData = data.data.result.slice(0, 8).map((item: { organizationName: any; businessNumber: any; }) => ({
+      //   companyName: item["organizationName"],
+      //   value: item["businessNumber"],
+      // }));
+      // console.log("new data: ", tempData);
+      // setClientsName(data.data.result.slice(0, 8).map((item: { organizationName: any; businessNumber: any; }) => ({
+      //   ...item.organizationName,
+      //   value: item["businessNumber"],
+      // })));
+    } catch (error: any) {
+      setClientsName([]);
       throw new Error(error);
     }
   };
 
-  const getOccupationNames = async (event: any) => {
+  const getOccupationNames = async (businessNumber: string): Promise<any> => {
     try {
       const token = Cookies.get("token");
 
       const data = await axios({
         method: "post",
-        url: ": https://u090h4woii.execute-api.ap-southeast-2.amazonaws.com/delta-microservices/client-product-packages-by-suboccupation",
-        data: { occupationNames: event?.target?.value },
-        headers: { Authorization: `Bearer ${token}` },
+        url: "https://u090h4woii.execute-api.ap-southeast-2.amazonaws.com/delta-microservices/delta-microservices-client-get-suboccupation",
+        data: JSON.stringify(businessNumber),
+
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       });
 
-      console.log(data);
+      setOccupationNames(data.data);
     } catch (error: any) {
-      const staticData = {
-        occupationNamesList: [
-          {
-            id: 1101,
-            name: "Medical and Other Health Care Services",
-            subOccupations: [
-              {
-                id: 1725,
-                name: "Dentists",
-                occupation: null,
-              },
-            ],
-          },
-        ],
-      };
-
-      setOccupationNames(staticData?.occupationNamesList);
-
-      console.log("MAIN VILLAN HOUN", error);
       throw new Error(error);
     }
   };
@@ -137,7 +100,7 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
             variant="subtitle1"
             className="clientDetailForm_cardContentHead"
           >
-            Provide the insured’s details to view available products
+            Please provide the insured’s details to view available products
           </Typography>
 
           <div className="clientDetailForm_companyName">
@@ -151,28 +114,35 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
               placeholder="Search"
               className="search"
               id="auto-select"
-              // renderOption={values.organizationName}
-              // setClientsName={values.organizationName}
-              inputValue={values["companyName"]}
-              autoSelect={values.organizationName}
+              autoSelect={values?.companyName}
               options={clientsNames}
-              getOptionLabel={(e: any) => e?.organizationName}
+              defaultValue={values.companyName}
+              getOptionLabel={(e: any) => {
+                return e?.organizationName ?? values?.companyName;
+              }}
               renderInput={(params) => (
                 <TextField
                   error={errors.companyName}
                   placeholder="Search"
                   className="khana-khalo"
                   {...params}
-                  // value={values["companyName"]}
                   onChange={getabnNumber}
-                  // aria-required={true}
+                  value={values["companyName"]}
                 />
               )}
               onChange={(_, selectedValue) => {
+                setBusinessNumber(selectedValue?.businessNumber);
                 handleChange({
                   target: {
                     name: "companyName",
                     value: selectedValue?.organizationName,
+                  },
+                });
+
+                handleChange({
+                  target: {
+                    name: "businessNumber",
+                    value: selectedValue?.businessNumber,
                   },
                 });
               }}
@@ -188,8 +158,6 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
                 color="primary"
                 name="tradingName"
                 value={values?.tradingName}
-                // checked={values.tradingName}
-                // error={errors.tradingName}
                 onChange={(e) => {
                   handleChange({
                     target: {
@@ -209,46 +177,55 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
             <Typography variant="subtitle1">Occupation / Industry</Typography>
             <img src={InfoIcon} alt="Client details" />
           </div>
+
           <div className="text">
             <Autocomplete
               placeholder="Search"
               className="search"
               id="auto-select"
-              autoSelect={values.name}
+              autoSelect={values.occupation}
               options={occupationNames}
-              // inputValue={values["occupation"]}
-              getOptionLabel={(e: any) => e?.name}
-              renderInput={(params) => (
-                <TextField
-                  placeholder="Search"
-                  className="khana-khalo"
-                  error={errors.occupation}
-                  {...params}
-                  onChange={getOccupationNames}
-                  // value={values["occupationNames"]}
-                  // value={values.occupation}
-                />
-              )}
+              getOptionLabel={(e: any) => e?.name ?? values.occupation}
+              renderInput={(params) => {
+                return (
+                  <TextField
+                    placeholder="Search"
+                    className="khana-khalo"
+                    error={errors.occupation}
+                    {...params}
+                  />
+                );
+              }}
               onChange={(_, selectedValue) => {
+                // console.log("kaho na piyar hai", selectedValue);
+                // setOccupationNames(selectedValue?.suboccupationId);
                 handleChange({
                   target: {
                     name: "occupation",
+
                     value: selectedValue?.name,
                   },
                 });
+                handleChange({
+                  target: {
+                    name: "subOccupationID",
+                    value: selectedValue?.id,
+                  },
+                });
               }}
+              value={values["occupation"]}
             />
           </div>
 
           <div className="clientDetailForm_formBottomContainer">
             <div className="clientDetailForm_employees">
               <div className="clientDetailForm_employeesHeading">
-                <Typography variant="subtitle1">Number of Employees</Typography>
+                <Typography variant="subtitle1">Number of employees</Typography>
                 <img src={InfoIcon} alt="Client details" />
               </div>
               <div className="clientDetailForm_employeesSelect">
                 <FormControl fullWidth>
-                  <InputLabel>Select number</InputLabel>
+                  {/* <InputLabel>Select number</InputLabel>
                   <Select
                     placeholder="Search"
                     className="number"
@@ -264,8 +241,19 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
                     <MenuItem value={"30"}>3-5</MenuItem>
                     <MenuItem value={"50"}>6-10</MenuItem>
                     <MenuItem value={"60"}>10-15</MenuItem>
-                    <MenuItem value={"70"}>15+</MenuItem>
-                  </Select>
+                    <MenuItem value={"70"}>15+</MenuItem> */}
+                  {/* </Select> */}
+                  <TextField
+                    id="outlined-multiline-flexibles"
+                    name="numberOfEmployees"
+                    onChange={handleChange}
+                    label="Enter number"
+                    // multiline
+                    value={values["numberOfEmployees"]}
+                    error={errors.numberOfEmployees}
+                    type="number"
+                    maxRows={4}
+                  />
                 </FormControl>
               </div>
             </div>
@@ -273,13 +261,13 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
             <div className="clientDetailForm_annualTurnover">
               <div className="clientDetailForm_annualHeading">
                 <Typography variant="subtitle1">
-                  Estimated Annual Turnover
+                  Estimated annual turnover
                 </Typography>
                 <img src={InfoIcon} alt="Client details" />
               </div>
               <div className="clientDetailForm_annualSelect">
                 <FormControl fullWidth>
-                  <InputLabel>Select Turnover</InputLabel>
+                  {/* <InputLabel>Select Turnover</InputLabel>
                   <Select
                     placeholder="Search"
                     className="turnOver"
@@ -297,7 +285,24 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
                     <MenuItem value={"60"}>$500,000</MenuItem>
                     <MenuItem value={"70"}>$1,000,000</MenuItem>
                     <MenuItem value={"80"}>$1,500,000</MenuItem>
-                  </Select>
+                  </Select> */}
+                  <TextField
+                    id="outlined-multiline-flexible"
+                    label="Enter Turnover"
+                    // multiline
+                    // value={turnOver}
+                    name="turnOver"
+                    onChange={handleChange}
+                    value={values["turnOver"]}
+                    error={errors.turnOver}
+                    type="number"
+                    maxRows={4}
+                  />
+                  {/* <TextField
+                    label="Size"
+                    id="outlined-size-normal"
+                    defaultValue="Normal"
+                  /> */}
                 </FormControl>
               </div>
             </div>

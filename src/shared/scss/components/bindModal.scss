@@ -18,25 +18,39 @@
         }
         .MuiTypography-h6 {
           font-family: "Poppins", sans-serif;
+
+          font-style: normal;
           font-weight: 700;
-          font-size: 16px;
+          font-size: 15px;
+          line-height: 22px;
+
           color: #474848;
         }
       }
     }
     .bindmodal_selectHeader {
-      margin-top: 40px;
+      margin-top: 30px;
       .MuiTypography-h5 {
-        font-family: "Poppins", sans-serif;
+        height: 21px;
+        left: 390px;
+        top: 322px;
+        font-family: "Poppins";
+        font-style: normal;
         font-weight: 600;
-        font-size: 17px;
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 50px;
         color: #474848;
+        width: 556px;
       }
     }
     .bindmodal_select {
-      width: 720px;
+      width: 614px;
+      // height: 315px;
       margin-top: 20px;
-      margin-bottom: 100px;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
       .MuiFormControl-root {
         .MuiInputBase-root {
         }
@@ -45,11 +59,19 @@
         background-color: #f6f6f6;
       }
       .MuiTypography-subtitle1 {
-        font-family: "Poppins", sans-serif;
+        width: 614px;
+
+        left: 390px;
+        top: 372px;
+
+        font-family: "Poppins";
+        font-style: normal;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 13px;
+        line-height: 21px;
+
         color: #474848;
-        margin-bottom: 10px;
+        margin-left: 6px;
       }
     }
     .modal_textarea {
@@ -77,8 +99,9 @@
       align-items: center;
       margin-left: 40px;
       margin-right: 40px;
-      margin-top: 40px;
-      margin-bottom: 40px;
+      margin-top: 24px;
+      margin-bottom: 20px;
+
       .MuiButton-containedPrimary {
         background: #6fb757;
         border-radius: 20px;

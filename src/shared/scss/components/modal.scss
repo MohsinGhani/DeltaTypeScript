@@ -55,9 +55,13 @@
 
       .MuiTypography-subtitle1 {
         font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-size: 15px;
-        color: #474848;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        text-decoration-line: underline;
+
+        color: #5ebab5;
       }
       .MuiTextField-root {
         width: 650px;

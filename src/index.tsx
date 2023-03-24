@@ -7,12 +7,18 @@ import {BrowserRouter} from 'react-router-dom'
 import { Provider } from "react-redux";
 import store from "./store";
 
+const basename = "BrokerPortal";
+
+export function endpoint(path: string) {
+  return `/${basename}${path}`;
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={"BrokerPortal"}>
     <Provider store={store}>
       <App />
     </Provider>

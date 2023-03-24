@@ -2,7 +2,9 @@ const initialValues = {
   companyName: "",
   occupation: "",
   tradingName: false,
-  numberOfEmployees: "",
-  turnOver: "",
+  // numberOfEmployees: "",
+  // turnOver: "",
+
+  // overseas: false,
 };
 export default initialValues;

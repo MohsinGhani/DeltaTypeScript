@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -15,6 +15,8 @@ import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import LastPageIcon from "@mui/icons-material/LastPage";
 import { SelectChangeEvent, TableHead } from "@mui/material";
 import { TablePaginationActionsProps } from "@mui/material/TablePagination/TablePaginationActions";
+import { quotesByBrokerId } from "../../services/quotesByBrokerId";
+import { getQuotes } from "../Quotes/quotesTabSlice";
 
 function TablePaginationActions(props: TablePaginationActionsProps) {
   const theme = useTheme();
@@ -108,7 +110,7 @@ const columns = [
   },
   {
     id: "size",
-    label: "Product(S)",
+    label: "Product(s)",
     minWidth: 170,
     align: "left",
     format: (value: string) => value.toLocaleString(),
@@ -122,115 +124,60 @@ const columns = [
   },
 ];
 
-const rows = [
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Referred"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Referred"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-  createData(
-    "Folio.insure Limited",
-    "690539404",
-    "06/10/2022",
-    "Professional Indemnity",
-    "Incomplete"
-  ),
-];
-
 export default function CustomPaginationActionsTable() {
+  const [quoteRows, setQuoteRows] = useState([
+    createQuoteRow(
+      "loading",
+      "loading",
+      "loading",
+      "loading",
+      "loading",
+      "loading"
+    ),
+  ]);
+  const [quotes, setQuotes] = useState([]);
+
+  useEffect(() => {
+    getQuotes();
+  }, []);
+
+  const getQuotes = async () => {
+    let tempQuotes = await quotesByBrokerId();
+    setQuotes(tempQuotes);
+    let tempRows = [];
+    for (let q of tempQuotes) {
+      tempRows.push(
+        createQuoteRow(
+          q.id.toString(),
+          q.quoteClient.organizationName,
+          q.inceptionDate,
+          q.lastModifiedDate,
+          q.quoteProducts.toString(),
+          q.status
+        )
+      );
+    }
+    setQuoteRows(tempRows);
+  };
+
+  function createQuoteRow(
+    quoteId: string,
+    insuredName: string,
+    inceptionDate: string,
+    lastModified: string,
+    product: string,
+    status: string
+  ) {
+    return {
+      quoteId: quoteId ? quoteId : "Null",
+      insuredName: insuredName ? insuredName : "Null",
+      inceptionDate: inceptionDate ? inceptionDate : "Null",
+      lastModified: lastModified ? lastModified : "Null",
+      product: product ? product : "Null",
+      status: status ? status : "Null",
+    };
+  }
+
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -261,24 +208,27 @@ export default function CustomPaginationActionsTable() {
           </TableHead>
           <TableBody>
             {(rowsPerPage > 0
-              ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              : rows
-            ).map((row) => (
-              <TableRow key={row.insuredName}>
+              ? quoteRows.slice(
+                  page * rowsPerPage,
+                  page * rowsPerPage + rowsPerPage
+                )
+              : quoteRows
+            ).map((quoteRow) => (
+              <TableRow key={quoteRow.insuredName}>
                 <TableCell component="th" scope="row">
-                  {row.insuredName}
+                  {quoteRow.insuredName}
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="left">
-                  {row.inceptionDate}
+                  {quoteRow.inceptionDate}
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="left">
-                  {row.lastModified}
+                  {quoteRow.lastModified}
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="left">
-                  {row.product}
+                  {quoteRow.product}
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="left">
-                  {row.status}
+                  {quoteRow.status}
                 </TableCell>
               </TableRow>
             ))}
@@ -286,8 +236,8 @@ export default function CustomPaginationActionsTable() {
           <TableFooter>
             <TableRow>
               <TablePagination
-                rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-                count={rows.length}
+                rowsPerPageOptions={[25, 10, 5, { label: "All", value: -1 }]}
+                count={quoteRows.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 SelectProps={{

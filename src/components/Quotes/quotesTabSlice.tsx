@@ -7,7 +7,6 @@ export const getQuotes = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await quotes();
-      console.log("response", response);
       return response;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -303,15 +302,12 @@ const quotesSlice = createSlice({
     });
     builder.addCase(getQuotes.fulfilled, (state, action) => {
       const myObj: { token: string } = Object(action.payload);
-      console.log("action.payload ===>", action.payload);
-      console.log("myObj ===>", myObj);
       state.isLoading = false;
       Cookies.set("token", myObj?.token);
       state.isSuccess = true;
       // state.token = action.payload;
     });
     builder.addCase(getQuotes.rejected, (state, action) => {
-      console.log("action", action);
       state.isLoading = false;
       state.isSuccess = false;
       state.token = "";

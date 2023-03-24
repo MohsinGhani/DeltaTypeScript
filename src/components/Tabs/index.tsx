@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -10,6 +10,7 @@ import QuoteTabs from "../Quotes/quoteTab";
 import PolicyTabs from "../Policies/policyTab";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Breadcrumbs, Typography } from "@mui/material";
+import { refreshToken } from "../../services/refreshToken";
 
 const MenuTabs = () => {
   const param = useParams();
@@ -68,11 +69,11 @@ const MenuTabs = () => {
   };
 
   const breadcrumbText: { [key: number]: string } = {
-    0: "Welcome back, Ben",
+    0: `Welcome back, ${localStorage.getItem("firstName")}`,
     1: "Your quotes",
-    2: "Your Policies",
-    3: "Get Started",
-    4: " Resources",
+    2: "Your policies",
+
+    3: " Resources",
   };
 
   const activeTab = tabs.findIndex(

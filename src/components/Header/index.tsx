@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import logo from "../../../src/assets/images/logo_withoutBg.png";
 
@@ -10,10 +11,12 @@ const Header = () => {
       </div>
       <div className="header_right_container">
         <div>
-          <p>Get support</p>
+          <p>Sign up</p>
         </div>
         <div>
-          <p>Log out</p>
+          <Link to="/">
+            <p>Log out</p>
+          </Link>
         </div>
       </div>
     </div>

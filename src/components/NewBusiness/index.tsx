@@ -9,7 +9,6 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import CommonTable from "../Table";
-import { Obj } from "reselect/es/types";
 
 const NewBusiness = () => {
   const [select, setSelect] = useState("");
@@ -36,7 +35,7 @@ const NewBusiness = () => {
         </div>
         <div className="newBusiness_selectBox">
           <FormControl>
-            <InputLabel>Sort by: </InputLabel>
+            <InputLabel>Sort by</InputLabel>
             <Select value={select}>
               <MenuItem value={10}>Ten</MenuItem>
               <MenuItem value={20}>Twenty</MenuItem>

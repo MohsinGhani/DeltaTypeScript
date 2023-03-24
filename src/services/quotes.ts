@@ -10,10 +10,8 @@ export const quotes = async () => {
       url: "https://u090h4woii.execute-api.ap-southeast-2.amazonaws.com/delta-microservices/quote-get-quotes",
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log("MAIN HEROIN HOUN", data);
     return data;
   } catch (error: any) {
-    console.log("MAIN VILLAN HOUN", error);
     throw new Error(error);
   }
 };

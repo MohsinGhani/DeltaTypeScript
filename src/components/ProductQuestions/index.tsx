@@ -20,21 +20,11 @@ import CyberQuestions from "./cyberQuestions";
 import MedicalMalpractice from "./medicalMalpractice";
 import GenralLiability from "./genralLiability";
 
-const CustomizedAccordions = ({ formField }: any) => {
+const CustomizedAccordions = ({ values, errors }: any) => {
   const [expanded, setExpanded] = useState<string | false>("panel1");
-
-  console.log(
-    "🚀 ~ file: index.tsx:22 ~ CustomizedAccordions ~ expanded",
-    expanded
-  );
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      console.log(
-        "🚀 ~ file: index.tsx:183 ~ CustomizedAccordions ~ panel",
-        panel
-      );
-
       setExpanded(panel);
     };
 
@@ -123,7 +113,7 @@ const CustomizedAccordions = ({ formField }: any) => {
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <img src={editIcon} alt="Edit Icon" />
           <Typography variant="subtitle1">
-            Employer’s Liability Questions
+            Employment Practices Liability Questions
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -244,7 +234,7 @@ const CustomizedAccordions = ({ formField }: any) => {
       >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <img src={editIcon} alt="Edit Icon" />
-          <Typography variant="subtitle1">Genral Liability</Typography>
+          <Typography variant="subtitle1">General Liability</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <GenralLiability />

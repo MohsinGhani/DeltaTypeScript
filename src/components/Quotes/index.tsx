@@ -18,6 +18,7 @@ import { getQuotes } from "./quotesTabSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../store";
 import { TablePaginationActionsProps } from "@mui/material/TablePagination/TablePaginationActions";
+import { quotesByBrokerId } from "../../services/quotesByBrokerId";
 
 function TablePaginationActions(props: TablePaginationActionsProps) {
   const theme = useTheme();
@@ -111,7 +112,7 @@ const columns = [
   },
   {
     id: "size",
-    label: "Product(S)",
+    label: "Product(s)",
     minWidth: 170,
     align: "left",
     format: (value: string) => value.toLocaleString(),
@@ -234,30 +235,82 @@ const rows = [
 ];
 
 export default function QuoteTable() {
-  const quotes = useSelector((state: any) => state?.quotes?.quotes);
+  const [quoteRows, setQuoteRows] = useState([
+    createQuoteRow(
+      "loading",
+      "loading",
+      "loading",
+      "loading",
+      "loading",
+      "loading"
+    ),
+  ]);
+  const [quotes, setQuotes] = useState([]);
 
-  const ro = quotes.map((it: any) => ({
-    insuredName: it?.quoteClient?.clientEntityName,
-    inceptionDate: "--",
-    lastModified: "--",
-    product: `${it?.quotePackages?.map((quotePackage: any) =>
-      quotePackage?.quoteProducts?.map((quoteProduct: any) =>
-        quoteProduct.quoteProductSections.map(
-          (quoteProductSection: any) => quoteProductSection?.productSectionName
+  useEffect(() => {
+    getQuotes();
+  }, []);
+
+  const getQuotes = async () => {
+    let tempQuotes = await quotesByBrokerId();
+    setQuotes(tempQuotes);
+    let tempRows = [];
+    for (let q of tempQuotes) {
+      tempRows.push(
+        createQuoteRow(
+          q.id.toString(),
+          q.quoteClient.organizationName,
+          q.inceptionDate,
+          q.lastModifiedDate,
+          q.quoteProducts.toString(),
+          q.status
         )
-      )
-    )}`,
-    status: "--",
-  }));
+      );
+    }
+    setQuoteRows(tempRows);
+  };
 
-  console.log("🚀 ~ file: index.tsx:238 ~ QuoteTable ~ state", quotes);
+  function createQuoteRow(
+    quoteId: string,
+    insuredName: string,
+    inceptionDate: string,
+    lastModified: string,
+    product: string,
+    status: string
+  ) {
+    return {
+      quoteId: quoteId ? quoteId : "Null",
+      insuredName: insuredName ? insuredName : "Null",
+      inceptionDate: inceptionDate ? inceptionDate : "Null",
+      lastModified: lastModified ? lastModified : "Null",
+      product: product ? product : "Null",
+      status: status ? status : "Null",
+    };
+  }
+
+  // const quotes = useSelector((state: any) => state?.quotes?.quotes);
+
+  // const ro = quotes.map((it: any) => ({
+  //   insuredName: it?.quoteClient?.clientEntityName,
+  //   inceptionDate: "--",
+  //   lastModified: "--",
+  //   product: `${it?.quotePackages?.map((quotePackage: any) =>
+  //     quotePackage?.quoteProducts?.map((quoteProduct: any) =>
+  //       quoteProduct.quoteProductSections.map(
+  //         (quoteProductSection: any) => quoteProductSection?.productSectionName
+  //       )
+  //     )
+  //   )}`,
+  //   status: "--",
+  // }));
+
   const dispatch = useDispatch<AppDispatch>();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  useEffect(() => {
-    dispatch(getQuotes());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getQuotes());
+  // }, []);
 
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
@@ -286,8 +339,11 @@ export default function QuoteTable() {
           </TableHead>
           <TableBody>
             {(rowsPerPage > 0
-              ? ro.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              : ro
+              ? quoteRows.slice(
+                  page * rowsPerPage,
+                  page * rowsPerPage + rowsPerPage
+                )
+              : quoteRows
             ).map((row: any) => (
               <TableRow key={row.insuredName}>
                 <TableCell component="th" scope="row">
@@ -311,8 +367,8 @@ export default function QuoteTable() {
           <TableFooter>
             <TableRow>
               <TablePagination
-                rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
-                count={ro.length}
+                rowsPerPageOptions={[25, 10, 5, { label: "All", value: -1 }]}
+                count={quoteRows.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 SelectProps={{

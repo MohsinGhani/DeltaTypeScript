@@ -14,7 +14,6 @@ function _renderStepContent(step: number) {
   }
 }
 const BindModal = ({ open, handleOpen, handleClose, onBind }: any) => {
-  //   const [select, setSelect] = useState<string>();
   const [isOpen, setIsOpen] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const isLastStep = activeStep === steps.length - 1;
@@ -27,7 +26,7 @@ const BindModal = ({ open, handleOpen, handleClose, onBind }: any) => {
     <div>
       <div>
         <Modal open={open} onClose={handleClose}>
-          <Box>
+          <Box sx={{ width: 711, height: 508 }}>
             {_renderStepContent(activeStep)}
             <Paper>
               <>
@@ -38,21 +37,37 @@ const BindModal = ({ open, handleOpen, handleClose, onBind }: any) => {
                 </div>
                 <div className="bindmodal_selectHeader">
                   <Typography variant="h5">
-                    Please confirm the following before binding cover
+                    By selecting ‘Bind’ cover will incept on the terms and
+                    conditions outlined in the quotation. You also agree that
+                    after making appropriate enquiries:
                   </Typography>
                 </div>
                 <div className="bindmodal_select">
                   <Typography variant="subtitle1">
-                    The client has formally agreed to the cover quoted in the
-                    Delta insurance Australia Broker Portal and the service
-                    provided was compliant and satisfactory for the client.
+                    • You are authorised by all Applicants to make this
+                    submission and to accept this quotation. <br></br> • You
+                    have read and understood the Important Notices to the
+                    Applicant. <br></br> • Where you have provided information
+                    about another person, you declare that the person <br></br>
+                    has been made aware of that fact and of the Delta Insurance
+                    Australia’s Privacy Statement.<br></br> • You confirm that
+                    the statements and information provided to Delta Insurance
+                    Australia are true and accurate. <br></br> •You understand
+                    that should information provided be misleading or
+                    fraudulent, the contract may be voided in its entirety as
+                    per the Insurance Contracts Act 1984.<br></br> • You
+                    understand that, up until a contract of insurance is entered
+                    into, you are under an ongoing obligation to immediately
+                    inform Delta Insurance Australia of any change in the facts
+                    or statements contained in this submission or in the
+                    accompanying documentation. <br></br> •You acknowledge that
+                    this information and any accompanying documents will form
+                    the basis of the contract.
                   </Typography>
                 </div>
 
                 <div className="bindmodal_button">
-                  <Button variant="text" onClick={handleClose}>
-                    Cancel
-                  </Button>
+                  <Button variant="text" onClick={handleClose}></Button>
                   <Button
                     variant="contained"
                     onClick={() => {

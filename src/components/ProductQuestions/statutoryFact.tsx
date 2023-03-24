@@ -8,11 +8,12 @@ const StatutoryFact = () => {
     <div className="statutory_container">
       <div className="statutory_heading">
         <Typography variant="subtitle1">
-          Statutory Liability Statement Of Fact
+          Statutory Liability Questions
         </Typography>
         <img src={InfoIcon} alt="Client details" />
-      </div>
-      <div className="statutory_details">
+      </div> 
+      {/* <div className="statutory_details">
+        
         <Typography variant="subtitle1">
           Please read the following statements and confirm their accuracy as
           indicated below: <br />
@@ -34,7 +35,35 @@ const StatutoryFact = () => {
       <div className="statutory_checkbox">
         <FormControlLabel control={<Checkbox />} label="Yes" />
         <FormControlLabel control={<Checkbox />} label="No" />
+      </div> */}
+      <br/>
+       <div className="statutory_checkboxQuestion">
+        <Typography variant="subtitle1">
+          {/* Are there any additional entities to be covered on this policy? */}
+          Does the Insured have written policies/procedures
+in place to ensure compliance with the All
+legislation specific to their industry/business? 
+        </Typography>
       </div>
+      <div className="statutory_checkbox">
+        <FormControlLabel control={<Checkbox />} label="Yes" />
+        <FormControlLabel control={<Checkbox />} label="No" />
+      </div>
+       <div className="statutory_checkboxQuestion">
+        <Typography variant="subtitle1">
+          {/* Are there any additional entities to be covered on this policy? */}
+          Are all the Insured’s employees provided
+appropriate training in accordance with all the
+policies/procedures at the start of their
+employment, and when policies/procedures are
+updated by the Insured? 
+        </Typography>
+      </div>
+      <div className="statutory_checkbox">
+        <FormControlLabel control={<Checkbox />} label="Yes" />
+        <FormControlLabel control={<Checkbox />} label="No" />
+      </div>
+  
   
     </div>
   );

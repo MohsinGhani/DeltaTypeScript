@@ -15,8 +15,10 @@ const MedicalMalpractice = () => {
       <div className="indemnityquestions_checkbox">
         <div className="indemnityquestions_checkboxHeading">
           <Typography variant="subtitle1">
-            Does the client have an existing Medical Malpractice policy in
-            place?
+          Does the Insured hold Australian accredited
+training certificates for the specified treatments
+you will perform (proof will be required in the
+event of a claim)?
           </Typography>
           <img src={InfoIcon} alt="Info Icon" />
         </div>
@@ -26,8 +28,9 @@ const MedicalMalpractice = () => {
       <div className="indemnityquestions_checkbox">
         <div className="indemnityquestions_checkboxHeading">
           <Typography variant="subtitle1">
-            Does the client perform any other healthcare services other than the
-            selected occupation?
+          Is cover required for more than 5 of the same type
+of healthcare professionals as selected in the
+occupation?
           </Typography>
           <img src={InfoIcon} alt="Info Icon" />
         </div>
@@ -37,8 +40,9 @@ const MedicalMalpractice = () => {
       <div className="indemnityquestions_checkbox">
         <div className="indemnityquestions_checkboxHeading">
           <Typography variant="subtitle1">
-            Is the client qualified and or certified to perform the declared
-            activities?
+          Does the Insured require all sub-contractors and, if
+relevant, all medical practitioners to hold their own
+medical malpractice insurance?
           </Typography>
           <img src={InfoIcon} alt="Info Icon" />
         </div>
@@ -48,8 +52,31 @@ const MedicalMalpractice = () => {
       <div className="indemnityquestions_checkbox">
         <div className="indemnityquestions_checkboxHeading">
           <Typography variant="subtitle1">
-            Is cover required for more than 5 of the same type of healthcare
-            professionals as selected in the occupation
+          Does the Insured enter any contracts that are greater than $500k in size?
+          </Typography>
+          <img src={InfoIcon} alt="Info Icon" />
+        </div>
+        <FormControlLabel control={<Checkbox />} label="Yes" />
+        <FormControlLabel control={<Checkbox />} label="No" />
+      </div>
+      <div className="indemnityquestions_checkbox">
+        <div className="indemnityquestions_checkboxHeading">
+          <Typography variant="subtitle1">
+          Does the Insured perform an injectables
+treatment?
+          </Typography>
+          <img src={InfoIcon} alt="Info Icon" />
+        </div>
+        <FormControlLabel control={<Checkbox />} label="Yes" />
+        <FormControlLabel control={<Checkbox />} label="No" />
+      </div>
+      <div className="indemnityquestions_checkbox">
+        <div className="indemnityquestions_checkboxHeading">
+          <Typography variant="subtitle1">
+          Has the Insured previously held continuous claims
+made cover for all the Insured’s business activities
+to be insured by this policy (proof may be required
+in the event of a claim)?
           </Typography>
           <img src={InfoIcon} alt="Info Icon" />
         </div>
@@ -59,24 +86,31 @@ const MedicalMalpractice = () => {
       <div className="indemnityquestions_statement">
         <Typography variant="subtitle1">
           <b>
-            Please read the following statements and confirm their accuracy as
-            indicated below:
+          Please read the following statements and confirm
+their accuracy as indicated below:
           </b>
         </Typography>
         <Typography variant="subtitle1">
-          The applicant uses a standard contractual agreement for the supply of
-          professional services
+        The Insured does not perform any of the following
+activities:
           <br />
-          <br /> The applicant uses standard contracts for the engagement of
-          independent consultants or contractors
+          <br /> o Aesthetic or cosmetic procedures
           <br />
-          <br /> Nonstandard contracts are reviewed by legal counsel
+          <br /> o Any teeth whitening
           <br />
-          <br /> Consultants are required to cover their own professional
-          indemnity insurance
+          <br /> o Medical services to professional sports
+individuals or elite athletes
           <br />
-          <br /> I/We as the Applicant confirm all the statements above to be
-          true and accurate
+          <br /> o Birthing, obstetrics, or fetal scanning
+activities
+          <br />
+          <br /> o Any e consultations or provide any advice
+given over the internet including the online
+prescribing of drugs
+          <br />
+          <br /> o Any spinal joint manipulations
+          <br />
+          <br /> o Treatments relating to clinical trials
         </Typography>
         <div className="indemnityquestions_checkbox">
           <FormControlLabel control={<Checkbox />} label="Yes" />

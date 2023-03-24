@@ -11,7 +11,6 @@ import phoneCallIcon from "../../assets/images/phoneCallIcon.svg";
 import mailIcon from "../../assets/images/mailIcon.svg";
 import { Button, Divider, Grid } from "@mui/material";
 import RecentQuotes from "../RecentQuotesTable";
-import CreateQuoteForm from "../createQuoteStepper";
 
 const HomePage = () => {
   let navigate = useNavigate();
@@ -48,7 +47,7 @@ const HomePage = () => {
               <div className="homePage_card_details">
                 <img src={buildingIcon} alt="Building Icon" />
                 <Typography variant="h6">
-                  Delta Insurance Australia Pty Ltd
+                  Contact Delta Insurance Australia
                 </Typography>
               </div>
               <Divider sx={{ marginTop: "20px" }} />

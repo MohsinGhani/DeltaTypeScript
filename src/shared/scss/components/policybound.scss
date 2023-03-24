@@ -15,6 +15,7 @@
       padding-left: 5px;
     }
   }
+ 
   .MuiTypography-subtitle1 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
@@ -35,6 +36,12 @@
       padding-left: 5px;
       height: 16px;
     }
+  }
+  .policy_documentSubHeading{
+    padding-left: 0px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
   }
   .policy_table {
     .MuiPaper-root {

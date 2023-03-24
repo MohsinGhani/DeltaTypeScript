@@ -54,9 +54,9 @@ const PolicyTabs = () => {
     <div className="quoteTabs_container">
       <div className="quoteTabs_tabmodal">
         <Tabs value={value} onChange={handleChange}>
-          <Tab label="Your Clients" {...a11yProps(0)} />
+          <Tab label="Your clients" {...a11yProps(0)} />
         </Tabs>
-        <Button onClick={() => setOpen(!open)}>Create Quote</Button>
+        <Button onClick={() => setOpen(!open)}>Create quote</Button>
       </div>
       <TabPanel value={value} index={0}>
         <NewBusinessPolicyTab />

@@ -44,7 +44,7 @@ const Policybound = ({ formField }: any) => {
                       <TableCell padding="checkbox">
                         <Checkbox color="primary" />
                       </TableCell>
-                      <TableCell>DESCRIPTION</TableCell>
+                      <TableCell>PRODUCT</TableCell>
                       <TableCell>
                         <div className="bindCover_quoteTableHeaderButton">
                           <Button variant="contained" color="primary">

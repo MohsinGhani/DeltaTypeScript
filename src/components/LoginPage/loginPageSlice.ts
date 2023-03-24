@@ -12,7 +12,6 @@ export const loginApi = createAsyncThunk<
   try {
     const { username, password } = payload;
     const response = await login(username, password);
-    console.log("response", response);
 
     return response;
   } catch (error) {
@@ -35,15 +34,12 @@ const loginSlice = createSlice({
     });
     builder.addCase(loginApi.fulfilled, (state, action) => {
       const myObj: { token: string } = Object(action.payload);
-      console.log("action.payload ===>", action.payload);
-      console.log("myObj ===>", myObj);
       state.isLoading = false;
       Cookies.set("token", myObj?.token);
       state.isSuccess = true;
       // state.token = action.payload;
     });
     builder.addCase(loginApi.rejected, (state, action) => {
-      console.log("action", action);
       state.isLoading = false;
       state.isSuccess = false;
       state.token = "";

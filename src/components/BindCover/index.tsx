@@ -13,7 +13,6 @@ import {
 import Download from "../../assets/images/download.svg";
 import EditIcon from "../../assets/images/editIcon.svg";
 // import InfoIcon from "../../assets/images/infoIcon.svg";
-import { jsx } from "@emotion/react";
 import {
   Typography,
   Select,
@@ -39,12 +38,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers-pro/AdapterDayjs";
 import SearchIcon from "@mui/icons-material/Search";
 import InfoIcon from "../../assets/images/infoIcon.svg";
 
-import {
-  DataGrid,
-  GridColumns,
-  GridEditRowsModel,
-  GridRowsProp,
-} from "@mui/x-data-grid";
+import { DataGrid, GridColumns, GridRowsProp } from "@mui/x-data-grid";
 
 type TableProps = {
   // name?: string;
@@ -73,8 +67,8 @@ function EnhancedTableHead(props: TableProps): JSX.Element {
             onChange={onSelectAllClick}
           />
         </TableCell>
-        <TableCell>DESCRIPTION</TableCell>
-        <TableCell>COVER LIMIT</TableCell>
+        <TableCell>PRODUCT</TableCell>
+        <TableCell>LIMIT OF INDEMNITY</TableCell>
         <TableCell>RETENTION</TableCell>
         <TableCell>BASE PREMIUM</TableCell>
       </TableRow>
@@ -214,12 +208,12 @@ const BindCover = ({ formField }: any) => {
       <div className="bindCover_child">
         <div className="bindCover_header">
           <img src={EditIcon} alt="Edit Icon" />
-          <Typography variant="subtitle1">Coverage Summary</Typography>
+          <Typography variant="subtitle1">Coverage summary</Typography>
         </div>
         <Divider light />
         <div className="businessInfo_header">
           <Typography variant="subtitle1">
-            What is your clients insured address
+            What is the insured's address
           </Typography>
           <img src={InfoIcon} alt="Info Icon" />
         </div>
@@ -286,13 +280,8 @@ const BindCover = ({ formField }: any) => {
             <em>None</em>
           </MenuItem> */}
             {/* <MenuItem value={10}>in $ AUD</MenuItem> */}
-            <MenuItem value={10}>in $ QLD</MenuItem>
-            <MenuItem value={20}>in $ NSW</MenuItem>
-            <MenuItem value={30}>in $ NT</MenuItem>
-            <MenuItem value={40}>in $ WA</MenuItem>
-            <MenuItem value={50}>in $ SA</MenuItem>
-            <MenuItem value={60}>in $ VIC</MenuItem>
-            <MenuItem value={70}>in $ ACT</MenuItem>
+            <MenuItem value={10}>$ of Revenue</MenuItem>
+            <MenuItem value={20}>% of Revenue</MenuItem>
           </Select>
         </div>
 
@@ -554,7 +543,7 @@ const BindCover = ({ formField }: any) => {
               <TableHead>
                 <TableRow>
                   <TableCell component="th" scope="row">
-                    DESCRIPTION
+                    PRODUCT
                   </TableCell>
                   <TableCell style={{ width: "100%" }} align="right">
                     BASE PREMIUM
@@ -592,14 +581,14 @@ const BindCover = ({ formField }: any) => {
                   </TableRow>
                   <TableRow>
                     <TableCell component="th" scope="row">
-                      GST
+                      fees per Package
                     </TableCell>
 
                     <TableCell style={{ width: 160 }} align="right">
                       $100.44
                     </TableCell>
                   </TableRow>
-                  <TableRow>
+                  {/* <TableRow>
                     <TableCell component="th" scope="row">
                       Commission
                     </TableCell>
@@ -607,7 +596,7 @@ const BindCover = ({ formField }: any) => {
                     <TableCell style={{ width: 160 }} align="right">
                       $15.15
                     </TableCell>
-                  </TableRow>
+                  </TableRow> */}
                   <TableRow>
                     <TableCell component="th" scope="row">
                       GST on commission
@@ -641,7 +630,7 @@ const BindCover = ({ formField }: any) => {
                         <TableCell padding="checkbox">
                           <Checkbox color="primary" />
                         </TableCell>
-                        <TableCell>DESCRIPTION</TableCell>
+                        <TableCell>PRODUCT</TableCell>
                         <TableCell>
                           <div className="bindCover_quoteTableHeaderButton">
                             <Button variant="contained" color="primary">
