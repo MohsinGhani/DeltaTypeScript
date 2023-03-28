@@ -159,7 +159,7 @@ const QuotesModal = ({
                         <img src={mailIcon} alt="Mail Icon" />
                         <div className="modalConfirmation_emailText">
                           <Typography variant="subtitle1">Email</Typography>
-                          <Typography variant="subtitle1" className="email">
+                          <Typography variant="subtitle2" className="email">
                             <u>contactus@deltainsurance.com.au</u>
                           </Typography>
                         </div>

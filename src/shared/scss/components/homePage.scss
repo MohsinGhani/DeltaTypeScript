@@ -52,7 +52,7 @@
           font-family: "Poppins-SemiBold";
         }
         .phoneNumber {
-          text-decoration: underline;
+          text-underline-position: under;
           cursor: pointer;
         }
       }
@@ -63,9 +63,11 @@
       .homePage_after_divider {
         // margin-top: 24px;
         .emailText {
+          font-family: "Poppins", sans-serif;
+          text-underline-position: under;
           color: #5ebab5;
-          text-decoration: underline;
-          cursor: pointer;
+          font-weight: 500;
+          font-size: 16px;
         }
       }
       .MuiPaper-root {

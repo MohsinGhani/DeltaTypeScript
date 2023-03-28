@@ -15,7 +15,9 @@
   .products_heading {
     display: flex;
     align-items: center;
-    padding: 20px 25px;
+    padding: 2px 25px;
+    margin-top: 22px;
+
     .MuiTypography-h6 {
       font-family: "Poppins", sans-serif;
       font-weight: 600;
@@ -28,12 +30,12 @@
     }
   }
   .productCard_container {
-    padding: 0 25px;
+    margin-left: 16px;
     display: flex;
     gap: 6px;
     .MuiPaper-root {
       border: none;
-      width: 33.3%;
+      // width: 33.3%;
       border-radius: 6px;
       .MuiCardContent-root {
         border: none;
@@ -64,11 +66,9 @@
         .productCard_info {
           display: flex;
           align-items: center;
-          // margin-top: 16px;
-          // height: 100px;
+          padding-left: 10px;
+          padding-right: 1px;
 
-          padding-left: 19px;
-          padding-right: 30px;
           .MuiTypography-h4 {
             font-family: "Poppins", sans-serif;
             font-weight: 700;
@@ -95,7 +95,9 @@
   .moreProducts_heading {
     display: flex;
     align-items: center;
-    padding: 37px 25px 20px 25px;
+    padding: 2px 25px;
+    margin-top: 46px;
+
     .MuiTypography-h6 {
       font-family: "Poppins", sans-serif;
       font-weight: 600;
@@ -108,13 +110,15 @@
     }
   }
   .moreProductCard_container {
-    padding: 0 25px;
+    // padding: 0 25px;
     display: flex;
     gap: 6px;
+    margin-left: 16px;
+
     .MuiPaper-root {
       // width: 225px;
       border-radius: 6px;
-      width: 33.3%;
+      // width: 33.3%;
       .MuiCardContent-root {
         padding: 0px;
         border: none;
@@ -142,15 +146,15 @@
         .moreProductCard_info {
           display: flex;
           align-items: center;
-          margin-top: -2px;
-          // height: 100px;
-          padding-left: 19px;
-          padding-right: 50px;
+          padding-left: 10px;
+          padding-right: 1px;
+
           .MuiTypography-h4 {
             font-family: "Poppins", sans-serif;
             font-weight: 700;
             font-size: 15px;
             color: #474848;
+            margin-right: 2px;
           }
           img {
             height: 20px;

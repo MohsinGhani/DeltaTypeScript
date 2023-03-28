@@ -19,6 +19,10 @@
         background-color: #f6f6f6;
         font-family: "Poppins-Regular";
         .MuiFormControl-root {
+          .sarib {
+            border: none;
+            background-color: aqua !important;
+          }
           .MuiInputBase-root {
             background-color: #f6f6f6;
             font-family: "Poppins-Regular";

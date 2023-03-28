@@ -37,9 +37,9 @@ const NewBusinessPolicyTab = () => {
           <FormControl>
             <InputLabel>Sort by </InputLabel>
             <Select value={select} onChange={handleChange}>
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>insured name</MenuItem>
+              <MenuItem value={20}>inception date</MenuItem>
+              <MenuItem value={30}>product/status </MenuItem>
             </Select>
           </FormControl>
         </div>

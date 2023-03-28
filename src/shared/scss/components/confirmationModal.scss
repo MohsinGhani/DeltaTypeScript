@@ -39,9 +39,11 @@
           }
           .email {
             font-family: "Poppins", sans-serif;
+            text-underline-position: under;
             color: #5ebab5;
             font-weight: 500;
             font-size: 18px;
+
             cursor: pointer;
           }
         }

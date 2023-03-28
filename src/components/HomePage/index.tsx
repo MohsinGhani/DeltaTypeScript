@@ -57,7 +57,7 @@ const HomePage = () => {
                   <div>
                     <Typography variant="h6">Phone number</Typography>
                     <Typography variant="h6" className="phoneNumber">
-                      +61 (07) 3017 4720
+                      <u>+61 (07) 3017 4720</u>
                     </Typography>
                   </div>
                 </div>
@@ -66,7 +66,7 @@ const HomePage = () => {
                   <div className="homePage_phoneNumber">
                     <Typography variant="h6">Email</Typography>
                     <Typography variant="h6" className="emailText">
-                      contactus@deltainsurance.com.au
+                      <u>contactus@deltainsurance.com.au</u>
                     </Typography>
                   </div>
                 </div>

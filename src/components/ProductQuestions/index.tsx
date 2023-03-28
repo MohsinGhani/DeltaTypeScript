@@ -39,8 +39,7 @@ const CustomizedAccordions = ({ values, errors }: any) => {
         </AccordionSummary>
         <AccordionDetails>
           <BusinessInformantion />
-          <div className="createQuoteStepper_buttonContainer">
-            <Button>Back</Button>
+          <div className="createQuoteStepper_buttonContainer1">
             <Button
               variant="contained"
               color="primary"

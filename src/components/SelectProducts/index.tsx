@@ -93,10 +93,7 @@ const Products = ({ values, errors, handleChange }: any) => {
       </div>
       <Divider light />
       <div className="products_heading">
-        <Typography variant="h6">
-          The following products are available for the insured
-        </Typography>
-        <img src={infoicon} alt="info details" />
+        <Typography variant="h6">Packages available</Typography>
       </div>
 
       <Grid container spacing={1} className="productCard_container">
@@ -184,9 +181,7 @@ const Products = ({ values, errors, handleChange }: any) => {
                       </Button> */}
                     </div>
                     <div className="productCard_info">
-                      <Typography variant="h4">
-                        {abc.name} <img src={infoicon} alt="info details" />
-                      </Typography>
+                      <Typography variant="h4">{abc.name}</Typography>
                     </div>
                     {/* <div className="productCard_bottom">
                       <Typography>Click to add this product.</Typography>
@@ -199,11 +194,7 @@ const Products = ({ values, errors, handleChange }: any) => {
         })}
       </Grid>
       <div className="moreProducts_heading">
-        <Typography variant="h6">
-          Unfortunately due to occupation or size, the following products are
-          not available to the insured
-        </Typography>
-        <img src={infoicon} alt="info details" />
+        <Typography variant="h6">More products from Delta</Typography>
       </div>
       <Grid container spacing={1} className="moreProductCard_container">
         {moreProducts?.map((moreProducts: any) => {
@@ -296,10 +287,7 @@ const Products = ({ values, errors, handleChange }: any) => {
                     </Button> */}
                   </div>
                   <div className="moreProductCard_info">
-                    <Typography variant="h4">
-                      {moreProducts.name}{" "}
-                      <img src={infoicon} alt="info details" />
-                    </Typography>
+                    <Typography variant="h4">{moreProducts.name} </Typography>
                   </div>
                   {/* <div className="moreProductCard_bottom">
                     <Typography>Click to add this product.</Typography>

@@ -15,6 +15,7 @@ import { FormControl, InputLabel } from "@mui/material";
 import axios from "axios";
 
 const ClientDetailForm = ({ values, errors, handleChange }: any) => {
+  console.log("🚀 ~ values:", values);
   const [clientsNames, setClientsName] = React.useState<any>([]);
   const [businessNumber, setBusinessNumber] = React.useState<string | null>(
     null
@@ -171,6 +172,14 @@ const ClientDetailForm = ({ values, errors, handleChange }: any) => {
                 Same or not applicable
               </Typography>
             </div>
+            {!values?.tradingName && (
+              <TextField
+                className="sarib"
+                variant="outlined"
+                fullWidth
+                placeholder="type trading name here"
+              />
+            )}
           </div>
 
           <div className="clientDetailForm_occupation">

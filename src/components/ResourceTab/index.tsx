@@ -12,6 +12,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import BasicModal from "../GetSupport";
 
 const Resources = () => {
   return (
@@ -21,7 +22,8 @@ const Resources = () => {
           <Typography gutterBottom variant="subtitle1" component="div">
             Frequently asked questions
           </Typography>
-          <Button variant="contained">Get support</Button>
+
+          <BasicModal />
         </div>
 
         <Divider light />

@@ -29,10 +29,36 @@
     .MuiPaper-root {
       // border: 1px solid #e7ebf0;
       box-shadow: none;
+      .createQuoteStepper_buttonContainer1 {
+        display: flex;
+        justify-content: end;
+        margin: 50px -8px;
+
+        a {
+          text-decoration: none;
+        }
+        .MuiButton-text {
+          text-transform: none;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          color: #6fb757;
+          font-size: 15px;
+        }
+        .MuiButton-contained {
+          text-transform: none;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          background: #6fb757;
+          font-size: 15px;
+          border-radius: 20px;
+          padding: 5px 30px;
+        }
+      }
       .createQuoteStepper_buttonContainer {
         display: flex;
         justify-content: space-between;
-        margin: 50px 40px;
+        margin: 50px -8px;
+
         a {
           text-decoration: none;
         }
@@ -58,16 +84,18 @@
       .MuiGrid-root {
         // display: flex;
         // display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         position: -webkit-sticky;
         position: sticky;
 
         .createQuoteStepper_leftCard {
           .MuiPaper-root {
             // border: 1px solid #e7ebf0;
-            box-shadow: none;
+            // box-shadow: none;
             position: -webkit-sticky;
             position: sticky;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            margin-top: 14px;
             // top: 50px;
 
             .createQuoteStepper_buttonContainer {
@@ -103,6 +131,7 @@
           position: -webkit-sticky;
           position: sticky;
           top: 200px;
+          width: 100%;
           // margin-top: 20px;
 
           .createQuoteStepper_cardHeader {

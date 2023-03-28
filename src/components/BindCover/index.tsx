@@ -131,8 +131,24 @@ const BindCover = ({ formField }: any) => {
       sortable: false,
     },
     {
+      field: "VIC",
+      headerName: "VIC",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
       field: "QLD",
       headerName: "QLD",
+      type: "number",
+      width: 90,
+      editable: true,
+      sortable: false,
+    },
+    {
+      field: "SA",
+      headerName: "SA",
       type: "number",
       width: 90,
       editable: true,
@@ -154,22 +170,7 @@ const BindCover = ({ formField }: any) => {
       editable: true,
       sortable: false,
     },
-    {
-      field: "SA",
-      headerName: "SA",
-      type: "number",
-      width: 90,
-      editable: true,
-      sortable: false,
-    },
-    {
-      field: "VIC",
-      headerName: "VIC",
-      type: "number",
-      width: 90,
-      editable: true,
-      sortable: false,
-    },
+
     {
       field: "ACT",
       headerName: "ACT",
@@ -193,13 +194,14 @@ const BindCover = ({ formField }: any) => {
       id: 1,
 
       NSW: "$ 100,000",
+      VIC: "$   0",
       QLD: "$   0",
+      SA: "$   0",
       NT: "$   0",
       WA: "$   0",
-      SA: "$   0",
-      VIC: "$   0",
       ACT: "$ 50,000",
       TAS: "$ 70,000",
+      Overseas: "$ 70,000",
     },
   ];
 
@@ -279,9 +281,17 @@ const BindCover = ({ formField }: any) => {
             {/* <MenuItem value="">
             <em>None</em>
           </MenuItem> */}
-            {/* <MenuItem value={10}>in $ AUD</MenuItem> */}
-            <MenuItem value={10}>$ of Revenue</MenuItem>
-            <MenuItem value={20}>% of Revenue</MenuItem>
+            <MenuItem value={10}>in $ NSW</MenuItem>
+            <MenuItem value={10}>in $ QLD</MenuItem>
+            <MenuItem value={10}>in $ NT</MenuItem>
+            <MenuItem value={10}>in $ WA</MenuItem>
+            <MenuItem value={10}>in $ SA</MenuItem>
+            <MenuItem value={10}>in $ VIC</MenuItem>
+            <MenuItem value={10}>in $ AUACT</MenuItem>
+            <MenuItem value={10}>in $ TAS</MenuItem>
+
+            {/* <MenuItem value={10}>$ of Revenue</MenuItem>
+            <MenuItem value={20}>% of Revenue</MenuItem> */}
           </Select>
         </div>
 

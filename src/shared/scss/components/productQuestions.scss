@@ -3,6 +3,7 @@
     margin-top: 10px;
     .MuiButtonBase-root {
       padding: 5px 20px;
+      height: 46px;
       .MuiAccordionSummary-content {
         display: flex;
         align-items: center;
@@ -19,7 +20,7 @@
     .MuiCollapse-root {
       .MuiAccordionDetails-root {
         border-top: 1px solid #e7ebf0;
-        padding: 20px 45px 60px 25px;
+        padding: 20px 45px 0px 25px;
       }
     }
   }

@@ -11,7 +11,7 @@ const Header = () => {
       </div>
       <div className="header_right_container">
         <div>
-          <p>Sign up</p>
+          <p>Get Support</p>
         </div>
         <div>
           <Link to="/">
