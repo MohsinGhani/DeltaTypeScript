@@ -76,9 +76,9 @@ function EnhancedTableHead(props: TableProps): JSX.Element {
   );
 }
 
-const BindCover = ({ formField }: any) => {
+const BindCover = () => {
   const [date, setDate] = useState<Date>(new Date());
-  const [turnOver, setTurnOver] = useState("");
+  // const [turnOver, setTurnOver] = useState("");
   const [Over, setOver] = useState("");
   const [age, setAge] = useState<number>();
   const [value, setValue] = useState<number>(30);
@@ -88,9 +88,9 @@ const BindCover = ({ formField }: any) => {
   //   setAge(+event.target.value);
   // };
 
-  const handleSliderChange = (event: Event, newValue: number) => {
-    setValue(newValue);
-  };
+  // const handleSliderChange = (event: Event, newValue: number) => {
+  //   setValue(newValue);
+  // };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     // setValue(event.target.value === "" ? "" : +event.target.value);
@@ -114,9 +114,9 @@ const BindCover = ({ formField }: any) => {
     setOver(event.target.value);
   };
 
-  const handleChange = (event: SelectChangeEvent<string>) => {
-    setTurnOver(event.target.value);
-  };
+  // const handleChange = (event: SelectChangeEvent<string>) => {
+  //   setTurnOver(event.target.value);
+  // };
 
   const handleDateChange = (newValue: any) => {
     setDate(newValue);

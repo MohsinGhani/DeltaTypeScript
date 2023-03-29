@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import {
   Accordion,
@@ -22,8 +22,9 @@ const Resources = () => {
           <Typography gutterBottom variant="subtitle1" component="div">
             Frequently asked questions
           </Typography>
-
-          <BasicModal />
+          <div className="getSupportModal">
+            <BasicModal />
+          </div>
         </div>
 
         <Divider light />

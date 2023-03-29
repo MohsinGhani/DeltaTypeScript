@@ -1,4 +1,3 @@
-import React, { useContext, useEffect } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -10,7 +9,6 @@ import QuoteTabs from "../Quotes/quoteTab";
 import PolicyTabs from "../Policies/policyTab";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Breadcrumbs, Typography } from "@mui/material";
-import { refreshToken } from "../../services/refreshToken";
 
 const MenuTabs = () => {
   const param = useParams();
@@ -72,17 +70,14 @@ const MenuTabs = () => {
     0: `Welcome back, ${localStorage.getItem("firstName")}`,
     1: "Your quotes",
     2: "Your policies",
+    3: "",
 
-    3: " Resources",
+    4: " Resources",
   };
 
   const activeTab = tabs.findIndex(
     (tab) => tab.link === `/${param?.tab || ""}`
   );
-
-  const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
-  };
 
   if (activeTab === -1) return <div className="homePage">404</div>;
 
@@ -111,10 +106,7 @@ const MenuTabs = () => {
             </Typography>
           </Breadcrumbs>
           <h3>{breadcrumbText[activeTab]}</h3>
-          {/* <div className="tab_welcomeText">
-            <p>Home</p>
-            <h3>Welcome back, Ben</h3>
-          </div> */}
+
           <div className="tab_content">{rendComp()}</div>
         </div>
       </div>
