@@ -147,8 +147,7 @@ const QuotesModal = ({
                         information. Delta will amend this referral and get back
                         to you as soon as possible. You will be notified by
                         email when this has been completed and what the next
-                        steps are to get your quote. If you have any questions
-                        on this you can email the underwriting team below
+                        steps are to get your quote.
                       </Typography>
                       <br />
                       <Typography variant="subtitle1">

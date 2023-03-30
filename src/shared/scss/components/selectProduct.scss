@@ -1,5 +1,13 @@
 .products_container {
   width: 100%;
+  .MuiGrid-root {
+    .MuiGrid-root {
+      .MuiPaper-root {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        margin-top: 14px;
+      }
+    }
+  }
   .products_header {
     display: flex;
     flex-direction: row;

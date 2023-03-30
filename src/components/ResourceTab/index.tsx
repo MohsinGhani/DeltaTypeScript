@@ -12,9 +12,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import BasicModal from "../GetSupport";
+
+import GetSupport from "../GetSupport";
 
 const Resources = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+
+  const handleClose = () => setOpen(false);
   return (
     <div className="resources_container">
       <Card>
@@ -23,7 +28,20 @@ const Resources = () => {
             Frequently asked questions
           </Typography>
           <div className="getSupportModal">
-            <BasicModal />
+            <Button variant="contained" onClick={handleOpen}>
+              Refer Client
+            </Button>
+            {open && (
+              <GetSupport
+                open={open}
+                handleOpen={handleOpen}
+                handleClose={handleClose}
+                title="Refer client"
+                subtitle="Provide the following information to refer to Delta underwriters"
+                isFilePick
+                actionTitle="additional Reasons"
+              />
+            )}
           </div>
         </div>
 

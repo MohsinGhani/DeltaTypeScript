@@ -96,6 +96,10 @@
             .MuiInputBase-root {
               width: 100%;
               padding-right: 5px;
+
+              .MuiButtonBase-root {
+                margin-right: 2px;
+              }
             }
           }
           .MuiTypography-subtitle1 {
@@ -242,6 +246,7 @@
                   max-width: 56px;
 
                   .MuiDataGrid-columnHeaderDraggableContainer {
+                    width: 50% !important;
                     .MuiDataGrid-columnHeaderTitleContainer {
                       .MuiDataGrid-columnHeaderTitleContainerContent {
                         .MuiDataGrid-columnHeaderTitle {
